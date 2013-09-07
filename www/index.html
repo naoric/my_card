@@ -48,12 +48,12 @@
   <script type="text/javascript" src="phonegap.js"></script>
   <script type="text/javascript">
   (function(w, d) {
-    d.addEventListener('deviceready', deviceReady);
+    app.init(deviceReady);
 
     function deviceReady() {
 
       navigator.accelerometer.getCurrentAcceleration(function (acceleration) {
-        var acc = get('acc');
+        var acc = app.get('acc');
         acc.innerHTML = 'X: ' + acceleration.x + ', Y: ' + acceleration.y +
           ', Z: ' + acceleration.z;
       }, function () {
