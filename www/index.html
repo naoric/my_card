@@ -16,9 +16,13 @@
   </header>
 
   <article data-role="content">
-    <p>
-      Current Acceleration: <span id="acc"></span>
-    </p>
+    <form action="recieve.aspx" method="put">
+      <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" value="" placeholder="Username"/>
+      </div>
+    </form>
+
   </article><!-- /content -->
 
   <footer data-role="footer" data-position="fixed">

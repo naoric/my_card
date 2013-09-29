@@ -1,6 +1,7 @@
-var app = (function(w, d) {
+var app = (function (w, d) { "use strict";
+  
   if (!Object.hasOwnProperty('create')) {
-    Object.create = function(parentObj) {
+    Object.create = function (parentObj) {
       function tmpObj() {}
       tmpObj.prototype = parentObj;
       return new tmpObj();
@@ -31,7 +32,8 @@ var app = (function(w, d) {
     get: function(id) {
       return d.getElementById(id);
     }
-  }
-
+  };
+  
+  return ret;
 
 })(window, document);
