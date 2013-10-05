@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Registration</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+ 
+   
+ 
+
+
+</head> 
+
+	
+<body> 
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="one">
+
+	<div data-role="header">
+		<h1>Register</h1>
+	</div>
+	<div data-role="content" >	
+		
+	<form action="http://google.com" method="get" id="myform"> 
+        <input type="text" name="email" id="email" value="" placeholder="Enter email"/>
+     <input type="text" name="name" id="name" value="" placeholder="Enter full name"/>
+        <input  name="password" id="password" value="" placeholder="Enter password" type="password"/>
+        <input  name="veriPass" id="veriPass" value="" placeholder="Verify password" type="password"/>
+        <select data-placeholder="true"  name="select-choice" id="select-choice" >
+         <option value='option1'>choose one</option>
+            <option value="north">north</option>
+            <option value="center">center</option>
+            <option value="south">south</option>
+        </select>
+          <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "datebox"}'>
+          <button id="sub" type="submit" name="submit" value="submit" data-theme="b" >Submit</button>
+
+
+    </form>
+		
+
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme="d">
+
+
+	
+	<div data-role="footer">
+		<h4>ready to Save?</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+
+    
+    <script>
+  $(document).ready(function() {
+ 
+ $("#select-choice").change(function(){
+    var $this=$(this);
+    $this.find("option:first-child").remove();
+ $this.off();
+ });
+                            
+ $("#myform").submit(function (e){
+if( $("#myform").valid()){
+   window.location.href="business.html";   }
+//  $.mobile.navigate( "bussiness.html" );                                   
+                           
+ e.preventDefault();          
+ } )     
+      
+      
+      
+      $("#myform").validate({  
+  rules :  {
+			
+			password: {
+				required: true,
+				minlength: 5
+			},
+			veriPass: {
+				required: true,
+				minlength: 5,
+				equalTo: "#password"
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			name:{
+			   required:true,
+			   minlength: 2
+			
+  }
+  },
+		messages: {
+		
+			password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			veriPass: {
+				required: "Please provide a password",
+				equalTo: "Please enter the same password as above"
+			},
+			email: "Please enter a valid email address"
+		},
+		name:{
+			name:"please enter full name"
+  }
+	});
+      
+      
+      
+ 
+  });
+
+    </script>
+</body>
+</html>
