@@ -1,54 +1,128 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-  <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
-  <script src="js/jquery-1.10.2.min.js"></script>
-  <script src="js/jquery.mobile-1.3.2.min.js"></script>
-  <title>Welcome to My Card</title>
-</head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Registration</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 
-<body>
-  <header data-role="header" data-position="fixed">
-    <h1>My Card!</h1>
-  </header>
 
-  <article data-role="content">
-    <form action="recieve.aspx" method="put">
-      <div data-role="fieldcontain" class="ui-hide-label">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" value="" placeholder="Username"/>
-      </div>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+ 
+   
+ 
+
+
+</head> 
+
+	
+<body> 
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="one">
+
+	<div data-role="header">
+		<h1>Register</h1>
+	</div>
+	<div data-role="content" >	
+		
+	<form action="http://google.com" method="get" id="myform"> 
+        <input type="text" name="email" id="email" value="" placeholder="Enter email"/>
+     <input type="text" name="name" id="name" value="" placeholder="Enter full name"/>
+        <input  name="password" id="password" value="" placeholder="Enter password" type="password"/>
+        <input  name="veriPass" id="veriPass" value="" placeholder="Verify password" type="password"/>
+        <select data-placeholder="true"  name="select-choice" id="select-choice" >
+         <option value='option1'>choose one</option>
+            <option value="north">north</option>
+            <option value="center">center</option>
+            <option value="south">south</option>
+        </select>
+          <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "datebox"}'>
+          <button id="sub" type="submit" name="submit" value="submit" data-theme="b" >Submit</button>
+
+
     </form>
+		
 
-  </article><!-- /content -->
-
-  <footer data-role="footer" data-position="fixed">
-    <h2>Buttons &amp; stuff</h2>
-  </footer>
-
-  <script type="text/javascript" src="js/utils.js"></script>
-  <script type="text/javascript" src="phonegap.js"></script>
-  <script type="text/javascript">
-  (function(w, d) {
-    app.init(deviceReady);
-
-    function deviceReady() {
-
-      navigator.accelerometer.getCurrentAcceleration(function (acceleration) {
-        var acc = app.get('acc');
-        acc.innerHTML = 'X: ' + acceleration.x + ', Y: ' + acceleration.y +
-          ', Z: ' + acceleration.z;
-      }, function () {
-          navigator.notification.alert('An error has occurred while trying to use the Accelerometer');
-      });
-    }
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme="d">
 
 
-  })(window, document);
-  </script>
+	
+	<div data-role="footer">
+		<h4>ready to Save?</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+
+    
+    <script>
+  $(document).ready(function() {
+ 
+ $("#select-choice").change(function(){
+    var $this=$(this);
+    $this.find("option:first-child").remove();
+ $this.off();
+ });
+                            
+ $("#myform").submit(function (e){
+if( $("#myform").valid()){
+   window.location.href="business.html";   }
+//  $.mobile.navigate( "bussiness.html" );                                   
+                           
+ e.preventDefault();          
+ } )     
+      
+      
+      
+      $("#myform").validate({  
+  rules :  {
+			
+			password: {
+				required: true,
+				minlength: 5
+			},
+			veriPass: {
+				required: true,
+				minlength: 5,
+				equalTo: "#password"
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			name:{
+			   required:true,
+			   minlength: 2
+			
+  }
+  },
+		messages: {
+		
+			password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			veriPass: {
+				required: "Please provide a password",
+				equalTo: "Please enter the same password as above"
+			},
+			email: "Please enter a valid email address"
+		},
+		name:{
+			name:"please enter full name"
+  }
+	});
+      
+      
+      
+ 
+  });
+
+    </script>
 </body>
-
 </html>

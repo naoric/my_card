@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
   <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
-  <title>Hello World</title>
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/jquery.mobile-1.3.2.min.js"></script>
+  <title>Welcome to My Card</title>
 </head>
 
 <body>
@@ -15,28 +16,29 @@
   </header>
 
   <article data-role="content">
-    <p>
-      Current Acceleration: <span id="acc"></span>
-    </p>
+    <form action="recieve.aspx" method="put">
+      <div data-role="fieldcontain" class="ui-hide-label">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" value="" placeholder="Username"/>
+      </div>
+    </form>
+
   </article><!-- /content -->
 
   <footer data-role="footer" data-position="fixed">
     <h2>Buttons &amp; stuff</h2>
   </footer>
-  
-      
-  <script src="js/jquery-1.10.2.min.js"></script>
-  <script src="js/jquery.mobile-1.3.2.min.js"></script>
+
   <script type="text/javascript" src="js/utils.js"></script>
   <script type="text/javascript" src="phonegap.js"></script>
   <script type="text/javascript">
   (function(w, d) {
-    d.addEventListener('deviceready', deviceReady);
+    app.init(deviceReady);
 
     function deviceReady() {
 
       navigator.accelerometer.getCurrentAcceleration(function (acceleration) {
-        var acc = get('acc');
+        var acc = app.get('acc');
         acc.innerHTML = 'X: ' + acceleration.x + ', Y: ' + acceleration.y +
           ', Z: ' + acceleration.z;
       }, function () {
