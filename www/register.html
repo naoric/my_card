@@ -31,20 +31,21 @@
 	<div data-role="content" >	
 		
 	<form action="http://google.com" method="get" id="myform"> 
-	<input type="text" name="email" id="email" value="" placeholder="Enter email"/>
-<input  name="passsword" id="passsword" value="" placeholder="Enter password" type="password"/>
-<input  name="veriPass" id="veriPass" value="" placeholder="Verify password" type="password"/>
-<select data-placeholder="true"  name="select-choice" id="select-choice" >
-     <option value='option1'>choose one</option>
-		<option value="north">north</option>
-		<option value="center">center</option>
-		<option value="south">south</option>
-	</select>
-      <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "datebox"}'>
-      <button id="sub" type="submit" name="submit" value="submit" data-theme="b" >Submit</button>
+        <input type="text" name="email" id="email" value="" placeholder="Enter email"/>
+     <input type="text" name="name" id="name" value="" placeholder="Enter full name"/>
+        <input  name="password" id="password" value="" placeholder="Enter password" type="password"/>
+        <input  name="veriPass" id="veriPass" value="" placeholder="Verify password" type="password"/>
+        <select data-placeholder="true"  name="select-choice" id="select-choice" >
+         <option value='option1'>choose one</option>
+            <option value="north">north</option>
+            <option value="center">center</option>
+            <option value="south">south</option>
+        </select>
+          <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "datebox"}'>
+          <button id="sub" type="submit" name="submit" value="submit" data-theme="b" >Submit</button>
 
 
-</form>
+    </form>
 		
 
 	</div><!-- /content -->
@@ -69,7 +70,8 @@
  });
                             
  $("#myform").submit(function (e){
-   window.location.href="bussiness.html";   
+if( $("#myform").valid()){
+   window.location.href="business.html";   }
 //  $.mobile.navigate( "bussiness.html" );                                   
                            
  e.preventDefault();          
@@ -92,7 +94,12 @@
 			email: {
 				required: true,
 				email: true
-			}
+			},
+			name:{
+			   required:true,
+			   minlength: 2
+			
+  }
   },
 		messages: {
 		
@@ -100,13 +107,15 @@
 				required: "Please provide a password",
 				minlength: "Your password must be at least 5 characters long"
 			},
-			confirm_password: {
+			veriPass: {
 				required: "Please provide a password",
-				minlength: "Your password must be at least 5 characters long",
 				equalTo: "Please enter the same password as above"
 			},
 			email: "Please enter a valid email address"
-		}
+		},
+		name:{
+			name:"please enter full name"
+  }
 	});
       
       
