@@ -9,15 +9,14 @@
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/jquery.mobile-1.3.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/jqm-datebox.min.css" />
+       
+         <link rel="stylesheet" type="text/css" href="css/jqm-datebox.min.css" />
         <script type="text/javascript" src="js/jqm-datebox.core.min.js"></script>
-   
         <script type="text/javascript" src="js/jqm-datebox.mode.calbox.min.js"></script>
 	<script type="text/javascript" src="js/jqm-datebox.mode.datebox.min.js"></script>
     </head>
     
     <body>
-        <!-- Start of first page: #one -->
         <div data-role="page" id="one">
             <div data-role="header" data-theme="b">
     <h1>Register</h1>
@@ -28,12 +27,7 @@
                     <input type="text" name="full_name" id="name" value="" placeholder="Enter full name" />
                     <input name="password" id="password" value="" placeholder="Enter password" type="password" />
                     <input name="veriPass" id="veriPass" value="" placeholder="Verify password" type="password" />
-                    <select data-placeholder="true" name="select-choice" id="select-choice">
-                        <option value='option1'>choose one</option>
-                        <option value="north">north</option>
-                        <option value="center">center</option>
-                        <option value="south">south</option>
-                    </select>
+                   
                     <input name="mode2" id="mode2" type="text" data-role="datebox" data-options='{"mode":"datebox", "useNewStyle":true, "fieldsOrederOverride":"d m y"}' />
                     <button id="sub" type="submit" name="submit" value="submit" data-theme="b">Submit</button>
                 </form>
@@ -45,6 +39,7 @@
                 </div>
                 <!-- /footer -->
             </div>
+              </div>
             <!-- /page popup -->
             <script>
                 function remote_Valdiation() {
@@ -53,8 +48,6 @@
                         type: "POST",
                         dataType: "jsonp",
                         data:
-
-<<<<<<< HEAD
                         $("#myform").serialize()
 
                     }).done(function(response) {
