@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     
     <head>
         <meta charset="utf-8" />
@@ -38,92 +39,104 @@
                 <!-- /footer -->
             </div>
         </div>
-        <!-- /page popup -->
-        <script>
-            function remoteValidation() {
-                $.ajax({
-                    url: "http:/mycard.com/user",
-                    type: "POST",
-                    dataType: "json",
-                    data: $("#myform").serialize()
-                }).done(function(response) {
-                    alert("good");
-                    if (response.status == "success") {
+        <!-- /footer -->
+      </div>
+    </div>
+    <div data-role="page" id="second">
+      <div data-theme="a" data-role="header">
+        <h3></h3>
+      </div>
 
-                        $.mobile.changePage("business.html", {
-                            transition: "slideup",
-                            changeHash: false
-                        });
-                    }
+      <div data-role="content">
 
-                    alert(response);
-                }).fail(function(error) {
-                    console.error(arguments);
-                });
+      </div>
+
+      <div data-theme="a" data-role="footer" data-position="fixed">
+        <h3>Page footer</h3>
+      </div>
+    </div>
+    <!-- /page popup -->
+    <script type="text/javascript">
+
+
+      jQuery.extend(jQuery.mobile.datebox.prototype.options, {
+        'overrideDateFormat': '%d.%m.%Y'
+      });
+
+      $("#select-choice").change(function() {
+        var $this = $(this);
+        $this.find("option:first-child").remove();
+        $this.off();
+      });
+
+      $("#myform").validate({
+        rules: {
+          password: {
+            required: true,
+            minlength: 5
+          },
+          veriPass: {
+            required: true,
+            minlength: 5,
+            equalTo: "#password"
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          full_Name: {
+            required: true,
+            minlength: 2
+
+          }
+        },
+        messages: {
+          password: {
+            required: "Please provide a password",
+            minlength: "Your password must be at least 5 characters long"
+          },
+          veriPass: {
+            required: "Please provide a password",
+            equalTo: "Please enter the same password as above"
+          },
+          email: "Please enter a valid email address"
+        },
+        full_Name: {
+          name: "please enter full name"
+        }
+      });
+
+
+      $(document).on('click', '#submit', function(e) {
+        if ($("#myform").valid()) {
+          $.ajax({
+            url: "http:/mycard.com/user/",
+            type: "POST",
+            dataType: "json",
+            data: $("#myform").serialize(),
+            success: function(r) {
+              console.dir(response);
+              resultObject.formSubmitionResult = result;
+              $.mobile.changePage("#second");
+            },
+            error: function(e) {
+              console.log(e);
+            },
+            beforeSend: function() {
+              // This callback function will trigger before data is sent
+              $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
             }
+          });
+        }
+        e.preventDefault();
+
+      });
 
 
-            jQuery.extend(jQuery.mobile.datebox.prototype.options, {
-                'overrideDateFormat': '%d.%m.%Y',
-            });
 
 
-            $(document).ready(function() {
 
-                $("#select-choice").change(function() {
-                    var $this = $(this);
-                    $this.find("option:first-child").remove();
-                    $this.off();
-                });
-                
-                $("#myform").submit(function(e) {
-                    e.preventDefault();
-                });
-
-//                $("#myform").validate({
-//                    rules: {
-//
-//                        password: {
-//                            required: true,
-//                            minlength: 5
-//                        },
-//                        veriPass: {
-//                            required: true,
-//                            minlength: 5,
-//                            equalTo: "#password"
-//                        },
-//                        email: {
-//                            required: true,
-//                            email: true
-//                        },
-//                        full_Name: {
-//                            required: true,
-//                            minlength: 2
-//
-//                        }
-//                    },
-//                    messages: {
-//
-//                        password: {
-//                            required: "Please provide a password",
-//                            minlength: "Your password must be at least 5 characters long"
-//                        },
-//                        veriPass: {
-//                            required: "Please provide a password",
-//                            equalTo: "Please enter the same password as above"
-//                        },
-//                        email: "Please enter a valid email address"
-//                    },
-//                    full_Name: {
-//                        name: "please enter full name"
-//                    }
-//                });
-
-                
-
-
-            });
-        </script>
-    </body>
+    </script>
+  </body>
 
 </html>
