@@ -39,7 +39,7 @@
             </div>
         </div>
         <!-- /page popup -->
-        <script>
+        <script type="text/javascript">
             function remoteValidation() {
                 $.ajax({
                     url: "http:/mycard.com/user",
@@ -47,9 +47,7 @@
                     dataType: "json",
                     data: $("#myform").serialize()
                 }).done(function(response) {
-                    alert("good");
                     if (response.status == "success") {
-
                         $.mobile.changePage("business.html", {
                             transition: "slideup",
                             changeHash: false
@@ -58,17 +56,14 @@
 
                     alert(response);
                 }).fail(function(error) {
-                    console.error(arguments);
+                    console.error("There was a problem with Ajax: " + arguments);
                 });
             }
 
 
             jQuery.extend(jQuery.mobile.datebox.prototype.options, {
-                'overrideDateFormat': '%d.%m.%Y',
+                'overrideDateFormat': '%d.%m.%Y'
             });
-
-
-            $(document).ready(function() {
 
                 $("#select-choice").change(function() {
                     var $this = $(this);
@@ -77,7 +72,8 @@
                 });
                 
                 $("#myform").submit(function(e) {
-                    e.preventDefault();
+                    remoteValidation();
+                    e.stopPropagation();
                 });
 
 //                $("#myform").validate({
@@ -119,10 +115,7 @@
 //                    }
 //                });
 
-                
 
-
-            });
         </script>
     </body>
 
