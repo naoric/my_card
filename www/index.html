@@ -102,34 +102,20 @@
         }
       });
 
-
-      $(document).on('click', '#submit', function(e) {
-        if ($("#myform").valid()) {
-          $.ajax({
-            url: "http:/mycard.com/user/",
-            type: "POST",
-            dataType: "json",
-            data: $("#myform").serialize(),
-            success: function(r) {
-              console.dir(response);
-              resultObject.formSubmitionResult = result;
-              $.mobile.changePage("#second");
-            },
-            error: function(e) {
-              console.log(e);
-            },
-            beforeSend: function() {
-              // This callback function will trigger before data is sent
-              $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
-            }
-          });
-        }
-        e.preventDefault();
-
+      
+      $(document).on('submit', '#myform', function(e) {
+        $.ajax({
+          url: "http://mycard.com/user",
+          type: "post",
+          crossDomain: true,
+          dataType: "json",
+          data: $("#myform").serialize()
+        }).done(function(res){
+          console.log('success');
+        }).fail(function(err) {
+          console.log(err);
+        });
       });
-
-
-
 
 
     </script>
