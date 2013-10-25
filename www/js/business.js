@@ -1,7 +1,7 @@
 (function(w,d){
  $.ajax({
  url: "http://mycard.com/cards/all-cards" ,
- dataType:"jsonp"
+ dataType:"json"
  }).done(function( data ) {
 var len = data.length,
     i = 0;
@@ -43,7 +43,7 @@ $("#ulist").on("click", "li>a:nth-child(2)", function (e) {
 $("#search").on("click", function () {
     $.ajax({
         url: "http://mycard.com/cards/all-cards",
-        dataType: "jsonp"
+        dataType: "json"
     }).done(function (data) {
         var len = data.length,
             i = 0;
