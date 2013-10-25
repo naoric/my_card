@@ -28,7 +28,7 @@
                     <input name="password" id="password" value="" placeholder="Enter password" type="password" />
                     <input name="veriPass" id="veriPass" value="" placeholder="Verify password" type="password" />
                     <input name="birth_date" id="birth_date" type="text" data-role="datebox" data-options='{"mode":"datebox", "useNewStyle":true, "fieldsOrederOverride":"d m y"}' />
-                    <button id="sub" type="submit" name="submit" value="submit" data-theme="b">Submit</button>
+                    <button id="submit" type="submit" name="submit" value="submit" data-theme="b">Submit</button>
                 </form>
             </div>
             <!-- /content -->
@@ -107,11 +107,11 @@
       });
 
 
-      $(document).on('click', '#submit', function(e) {
+      $(document).on('submit', '#myform', function(e) {
         if ($("#myform").valid()) {
           $.ajax({
-            url: "http:/mycard.com/user/",
-            type: "POST",
+            url: "http://mycard.com/user",
+            type: "post",
             dataType: "json",
             data: $("#myform").serialize(),
             success: function(r) {
@@ -120,15 +120,15 @@
               $.mobile.changePage("#second");
             },
             error: function(e) {
-              console.log(e);
-            },
+              console.log("sdfdsf");
+            } ,
             beforeSend: function() {
               // This callback function will trigger before data is sent
               $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
             }
           });
         }
-        e.preventDefault();
+
 
       });
 
