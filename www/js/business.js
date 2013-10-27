@@ -1,18 +1,53 @@
+$( document ).on( "pageinit", "#myPage", function() {
+			$( "#slist" ).on( "listviewbeforefilter", function ( e, data ) {
+				var $ul = $( this ),
+					$input = $( data.input ),
+					value = $input.val(),
+					html = "";
+				$ul.html( "" );
+				if ( value && value.length > 2 ) {
+					$ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
+					$ul.listview( "refresh" );
+					$.ajax({
+						url: "http://mycard.com/cards/all-cards",
+						dataType: "json",
+						
+					})
+					.then( function ( response ) {
+						$.each( response, function ( i, val ) {
+							html += "<li>" + val + "</li>";
+						});
+						$ul.html( html );
+						$ul.listview( "refresh" );
+						$ul.trigger( "updatelayout");
+					});
+				}
+			});
+		});
+
+
 (function(w,d){
  $.ajax({
  url: "http://mycard.com/cards/all-cards" ,
- dataType:"jsonp"
+ dataType:"json",
+	 type:"GET"
  }).done(function( data ) {
 var len = data.length,
     i = 0;
 $ulist = $("#ulist");
+	 $slist = $("#slist");
+ 
 for (i = 0; i < len; i++) {
     data[i].id;
 
 
     $ulist.append("<li><a href='businessPage.html'><img width='50' src='http://mycard.com/" + data[i].logo_path + "'/><h3>" + data[i].name + "</h3><p >" + data[i].description + "</p></a><a href='shnizel.html' data-icon='plus' data-iconpos='notext' data-theme='c' data-inline='true'>A</a><input type='hidden' value='" + data[i].id + "'/></li>");
-    $ulist.listview('refresh');
+  
+	
+	$slist.append("<li><a href='#'>"+data[i].name+"</a></li>");
 }
+$slist.listview('refresh');
+	   $ulist.listview('refresh');
 }).fail(function (j, t, e) {
     alert(e);
 });
@@ -40,32 +75,7 @@ $("#ulist").on("click", "li>a:nth-child(2)", function (e) {
 
 });
 
-$("#search").on("click", function () {
-    $.ajax({
-        url: "http://mycard.com/cards/all-cards",
-        dataType: "jsonp"
-    }).done(function (data) {
-        var len = data.length,
-            i = 0;
-        $ulist = $("#ulist");
-        $ulist.empty();
-        for (i = 0; i < len; i++) {
-            if (data[i].name == $("#search").text) {
-                $ulist.append("<li><a href='businessPage.html'><img width='50' src='http://mycard.com/" + data[i].logo_path + "'/><h3>" + data[i].name + "</h3><p >" + data[i].description + "</p></a><a href='shnizel.html' data-icon='plus' data-iconpos='notext' data-theme='c' data-inline='true'>A</a><input type='hidden' value='" + data[i].id + "'/></li>");
-                $ulist.listview('refresh');     
-   }
-   
-    
-   
-     }    
- }).fail(function(j, t, e) {
-   alert(e);  
- });
-   
-   
-   
-   
-   })
+
 
 
 

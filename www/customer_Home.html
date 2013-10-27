@@ -8,47 +8,27 @@
   <script src="js/jquery.mobile-1.3.0.min.js"></script>
 </head>
 <body>
-<!-- Home -->
-<div data-role="page" id="page1">
+<div data-role="page" id="page1" class="ui-responsive-panel">
     <div data-theme="a" data-role="header">
+	<a href="#mypanel" data-icon="bars" data-theme="e"></a>
+  
         <h3>
-            hello "client name"
+           Home
         </h3>
-         <div data-role="navbar" data-iconpos="right">
-            <ul>
-                <li>
-            
-                    <a href="business.html" data-transition="flip" data-theme="e" data-icon="plus">
-                        add business
-                    </a>
-                </li>
-                <li>
-                    <a href="#page1" data-transition="flip" data-theme="e" data-icon="star">
-                        to top users
-                    </a>
-                </li>
-                <li>
-                    <a href="#page1" data-transition="fade" data-theme="e" data-icon="info">
-                        challenges
-                    </a>
-                </li>
-            </ul>
-        </div>
+
+
     </div>
-        <ul data-role="listview" data-divider-theme="b" data-inset="true">
+	<div data-role="content">
+     <ul data-role="listview" data-divider-theme="e" data-inset="true">
             <li data-role="list-divider" role="heading">
-                new sales
+                challenges
             </li>
             <li data-theme="d">
                 <a href="#page1" data-transition="slide">
-                    שניצלה עד 4 בגט ב 17 שח
+                    קנה בשניצלה היום בין 5-8
                 </a>
             </li>
-            <li data-theme="c">
-                <a href="#page1" data-transition="slide">
-                    פיצה גוטה: פיצה שניה בחצי מחיר
-                </a>
-            </li>
+            
         </ul>
         <ul data-role="listview" data-divider-theme="b" data-inset="true">
             <li data-role="list-divider" role="heading">
@@ -70,7 +50,29 @@
                 </a>
             </li>
         </ul>
-     
+		
+ 	</div>
+	<div id="mypanel" data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" data-theme="a">
+
+			<ul data-role="listview" data-theme="e" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+				<li data-icon="delete" style="background-color:#111;">
+					<a href="#" data-rel="close">Close menu</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility screen reader">
+					<a href="customer_Home.html" data-transition="flip" rel="external">Customer Home</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility sucreen reader">
+					<a href="business.html" data-transition="flip" rel="external">Search Business</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility screen reader">
+					<a href="top_Users.html" data-transition="flip" rel="external">Top App Users</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility screen reader">
+					<a href="challenges.html" data-transition="flip" rel="external">challenges</a>
+				</li>
+			</ul>
+		</div>
 </div>
+
 </body>
 </html>
