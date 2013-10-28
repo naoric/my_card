@@ -10,7 +10,7 @@
 	<script src="js/jquery.mobile-1.3.0.min.js"></script>
 </head>
 
-<body>
+<body style="color:grey;">
 	<div data-role="page" id="page1" class="ui-responsive-panel">
 
 		<div data-role="header">
@@ -20,17 +20,38 @@
 		</div>
 		<div data-role="content"  data-theme="b">
 
-			<div data-theme="e" class="ui-body ui-body-d" style="color:grey;">
-				<h1 style="color:black;">קניה בשניצלה</h1>
+		<ul data-role="listview" data-divider-theme="e" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                challenges
+            </li>
+            <li data-theme="d">
+                <div data-role="collapsible">
+					<h1 style="color:black;">קניה בשניצלה</h1>
+				<div data-theme="e" class="ui-body ui-body-d" ">
+				
 				<p>בתאריך:</p>
 				<p>משעה:</p><p>עד שעה:</p>
 				<p>נקודות אפליקציה:</p>
 				<p>תיאור: על כל רכישה של ארוחה 10 אחוז הנחה נוספת מעבר לנקודות הרגילות</p>
-				<div data-role="collapsible" data-collapsed="true" data-theme="d">
-					<h3>תאריך התחלה - סיום</h3>
-					<p>12.4.13 - 12.5.13</p>
-				</div>
-			</div>
+					</div>
+					</div>
+
+            </li>
+		   <li data-theme="d">
+                <div data-role="collapsible">
+					<h1 style="color:black;">פרסום בפייסבוק</h1>
+				<div data-theme="e" class="ui-body ui-body-d" style="color:grey;">
+				
+				<p>בתאריך:</p>
+				<p>משעה:</p><p>עד שעה:</p>
+				<p>נקודות אפליקציה:</p>
+				<p>תיאור: </p>
+					</div>
+					</div>
+
+            </li>
+            
+        </ul>
 		</div>
 		<div id="mypanel" data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" data-theme="a">
 
