@@ -59,12 +59,12 @@
 					minlength: 5
 				},
 				birth_date: {
-				required: true
+					required: true
 
 				},
-					full_name : {
+				full_name: {
 					required: true,
-						minlength:4
+					minlength: 4
 
 				},
 				veriPass: {
@@ -116,11 +116,20 @@
 					dataType: "json",
 					data: $("#myform").serialize(),
 					success: function(r) {
-						console.dir(response);
-						resultObject.formSubmitionResult = result;
-						$.mobile.changePage("#second");
+						if (r.status == "success") {
+							$.mobile.changePage("#business");
+						} else {
+							var messages = r.messages;
+							for(prop in messages) {
+								if (messages.hasOwnProperty(prop) {
+//									var fieldName = messages[prop];
+									alert('shit');
+								}
+							}
+							console.log(r);
+						}
 					},
-					error: function(e) {
+					fail: function(e) {
 						console.log("sdfdsf");
 					},
 					beforeSend: function() {
