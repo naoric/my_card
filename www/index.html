@@ -109,37 +109,33 @@
 
 
 		$(document).on('submit', '#myform', function(e) {
-			if ($("#myform").valid()) {
-				$.ajax({
-					url: "http://mycard.com/user",
-					type: "post",
-					dataType: "json",
-					data: $("#myform").serialize(),
-					success: function(r) {
-						if (r.status == "success") {
-							$.mobile.changePage("#business");
-						} else {
-							var messages = r.messages;
-							for(prop in messages) {
-								if (messages.hasOwnProperty(prop) {
-//									var fieldName = messages[prop];
-									alert('shit');
+				if ($("#myform").valid()) {
+					$.ajax({
+							url: "http://naorami.com/user",
+							type: "post",
+							dataType: "json",
+							data: $("#myform").serialize(),
+							success: function(r) {
+								if (r.status == "success") {
+									$.mobile.changePage("#business");
+								} 
+								else{
+									alert('bad');
+									
 								}
-							}
-							console.log(r);
-						}
-					},
-					fail: function(e) {
-						console.log("sdfdsf");
-					},
-					beforeSend: function() {
-						// This callback function will trigger before data is sent
-						$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
-					}
-				});
-			}
 
-		});
+					},
+									fail: function(e) {
+										console.log("sdfdsf");
+									},
+									beforeSend: function() {
+										// This callback function will trigger before data is sent
+										$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
+									}
+								});
+						}
+
+					});
 	</script>
 </body>
 
