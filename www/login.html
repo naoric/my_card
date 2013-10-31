@@ -32,7 +32,15 @@
 			</form>
 		</div>
 	</div>
-	<div data-role="dialog" id="dialog">Bad email or password</div>
+	<div data-role="dialog" id="dialog">
+		<div data-role="header">
+		<h3>problem</h3>
+		</div>
+		<div data-role="content" data-theme="c">
+			<h1>Bad email or password please re enter details</h1>
+			<a href="login.html" data-role="button" data-rel="back" data-theme="c">OK</a>    
+		</div>
+	</div>
 	<script type="text/javascript">
 		$("#myform").validate({
 			rules: {
