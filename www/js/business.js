@@ -28,7 +28,7 @@ $( document ).on( "pageinit", "#myPage", function() {
 
 (function(w,d){
  $.ajax({
- url: "Http://naorami.com/cards/all-cards" ,
+ url: "Http://redigo.me/cards/all-cards" ,
  dataType:"json",
 	 type:"GET"
  }).done(function( data ) {
@@ -80,3 +80,13 @@ $("#ulist").on("click", "li>a:nth-child(2)", function (e) {
 
 
 })(window, document);
+
+
+
+function searchFunc(){
+	
+	
+	
+	
+	
+}

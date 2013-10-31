@@ -58,9 +58,10 @@
 
 
 			$(document).on('submit', '#myform', function(e) {
+				e.preventDefault();
 				if ($("#myform").valid()) {
 					$.ajax({
-						url: "http://naorami.com/login",
+						url: "http://redigo.me/login",
 						type: "post",
 						dataType: "json",
 						data: $("#myform").serialize(),
