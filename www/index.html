@@ -122,7 +122,7 @@
         data: $("#myform").serialize(),
         success: function(r) {
           if (r.status == "success") {
-            $.mobile.changePage("#business");
+            $.mobile.changePage("business.html", { transition: "slideup" });
           } else {
             alert('bad');
           }
