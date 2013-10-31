@@ -41,6 +41,12 @@
 		</div>
 
 	</div>
+	<div data-role="popup" id="good_pop">
+	<p>Registration is completed please confirm mail in the next 24 hours<p>
+</div>
+		<div data-role="popup" id="bad_pop">
+	<p><p>
+</div>
 	<script type="text/javascript">
 		jQuery.extend(jQuery.mobile.datebox.prototype.options, {
 			'overrideDateFormat': '%d.%m.%Y'
@@ -52,90 +58,94 @@
 			$this.off();
 		});
 
-		$("#myform").validate({
-			rules: {
-				password: {
-					required: true,
-					minlength: 5
-				},
-				birth_date: {
-					required: true
+		$(document).on("pageinit", function() {
+			$("#myform").validate({
+				rules: {
+					password: {
+						required: true,
+						minlength: 5
+					},
+					birth_date: {
+						required: true
 
-				},
-				full_name: {
-					required: true,
-					minlength: 4
+					},
+					full_name: {
+						required: true,
+						minlength: 4
 
+					},
+					veriPass: {
+						required: true,
+						minlength: 5,
+						equalTo: "#password"
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					full_Name: {
+						required: true,
+						minlength: 2
+
+					}
 				},
-				veriPass: {
-					required: true,
-					minlength: 5,
-					equalTo: "#password"
-				},
-				email: {
-					required: true,
-					email: true
+				messages: {
+					password: {
+						required: "Please provide a password",
+						minlength: "Your password must be at least 5 characters long"
+					},
+					full_name: {
+						required: "Please provide a full name",
+						minlength: "please enter a valid full name "
+					},
+					birth_date: {
+						required: "Please provide a birth date",
+						minlength: "please provide a valid birthdate"
+					},
+					veriPass: {
+						required: "Please provide a password",
+						equalTo: "Please enter the same password as above"
+					},
+					email: "Please enter a valid email address"
 				},
 				full_Name: {
-					required: true,
-					minlength: 2
-
+					name: "please enter full name"
 				}
-			},
-			messages: {
-				password: {
-					required: "Please provide a password",
-					minlength: "Your password must be at least 5 characters long"
-				},
-				full_name: {
-					required: "Please provide a full name",
-					minlength: "please enter a valid full name "
-				},
-				birth_date: {
-					required: "Please provide a birth date",
-					minlength: "please provide a valid birthdate"
-				},
-				veriPass: {
-					required: "Please provide a password",
-					equalTo: "Please enter the same password as above"
-				},
-				email: "Please enter a valid email address"
-			},
-			full_Name: {
-				name: "please enter full name"
-			}
+			})
 		});
 
 
 
 		$(document).on('submit', '#myform', function(e) {
-				if ($("#myform").valid()) {
+
+				if ($("#myform").valid())
 					$.ajax({
-							url: "http://naorami.com/user",
-							type: "post",
-							dataType: "json",
-							data: $("#myform").serialize(),
-							success: function(r) {
-								if (r.status == "success") {
-									$.mobile.changePage("#business");
-								} 
-								else{
-									alert('bad');
-									
-								}
-
-					},
-									fail: function(e) {
-										console.log("sdfdsf");
-									},
-									beforeSend: function() {
-										// This callback function will trigger before data is sent
-										$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
-									}
+						url: "http://naorami.com/user",
+						type: "post",
+						dataType: "json",
+						data: $("#myform").serialize(),
+						success: function(r) {
+							if (r.status == "success") {
+								
+								$.mobile.changePage("business.html", {
+									transition: "slideup"
 								});
-						}
+							} else {
+								alert('bad');
+								 $.mobile.loadPage( "index.html");
 
+							}
+
+						},
+						fail: function(e) {
+							console.log("sdfdsf");
+						},
+						beforeSend: function() {
+							// This callback function will trigger before data is sent
+							$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
+						}
 					});
+			});
 	</script>
 </body>
 
