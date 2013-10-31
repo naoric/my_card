@@ -9,8 +9,8 @@ $( document ).on( "pageinit", "#myPage", function() {
 					$ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
 					$ul.listview( "refresh" );
 					$.ajax({
-						url: "http://mycard.com/cards/all-cards",
-						dataType: "json",
+						url: "http://redigo.me/cards/all-cards",
+						dataType: "json"
 						
 					})
 					.then( function ( response ) {
