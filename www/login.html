@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Registration</title>
+	<title>Login</title>
 	<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/jquery.mobile-1.3.0.min.js"></script>
@@ -21,7 +21,7 @@
 			</h5>
 		</div>
 		<div data-role="content">
-			<form action="" id="myform">
+			<form action="http://redigo.me/login" method="post" id="myform">
 
 				<input name="email" id="email" value="" type="text" placeholder="Enter email">
 
@@ -32,55 +32,63 @@
 			</form>
 		</div>
 	</div>
+	<div data-role="dialog" id="dialog">Bad email or password</div>
 	<script type="text/javascript">
 		$("#myform").validate({
-				rules: {
-					password: {
-						required: true,
-						minlength: 5
-					},
-					email: {
-						required: true,
-						email: true
-					}
+			rules: {
+				password: {
+					required: true,
+					minlength: 5
 				},
-				messages: {
-					password: {
-						required: "Please provide a password",
-						minlength: "Your password must be at least 5 characters long"
-					},
-
-					email: {
-						required: "Please enter a valid email address"
-					}
-				}});
-
-
-
-			$(document).on('submit', '#myform', function(e) {
-				e.preventDefault();
-				if ($("#myform").valid()) {
-					$.ajax({
-						url: "http://redigo.me/login",
-						type: "post",
-						dataType: "json",
-						data: $("#myform").serialize(),
-						success: function(r) {
-							alert('good');
-			resultObject.formSubmitionResult = result;
-							$.mobile.changePage("#second");
-						},
-						error: function(e) {
-							alert('not good');
-						},
-						beforeSend: function() {
-							// This callback function will trigger before data is sent
-							$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
-						}
-					});
+				email: {
+					required: true,
+					email: true
 				}
+			},
+			messages: {
+				password: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 5 characters long"
+				},
 
-			});
+				email: {
+					required: "Please enter a valid email address"
+				}
+			}
+		});
+
+
+
+		$(document).on('submit', '#myform', function(e) {
+			e.preventDefault();
+			if ($("#myform").valid()) {
+				$.ajax({
+					url: "http://redigo.me/login",
+					type: "post",
+					dataType: "json",
+					data: $("#myform").serialize(),
+					success: function(r) {
+						console.log(r);
+						if (r.status == "success") {
+							$.mobile.changePage("customer_Home.html", {
+								transition: "slideup"
+							});
+						} else {
+                       $.mobile.changePage('#dialog', 'pop', true, true);
+
+						}
+					},
+					error: function(e) {
+						alert('not good');
+					},
+					beforeSend: function() {
+						// This callback function will trigger before data is sent
+						$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
+					}
+				});
+			}
+
+		});
 	</script>
 </body>
 
