@@ -12,7 +12,7 @@ $(document).on("pageinit","#businessPage",function(){
             console.log(e);
         });
 
-
+sessionStorage.businessId=1;
 
 });
 })(window,document);
