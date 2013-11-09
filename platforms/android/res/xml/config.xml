@@ -18,6 +18,9 @@
         <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
     </feature>
     <access origin="http://127.0.0.1*" />
+	<access origin="http://redigo.me" />
+	<access origin="http://redigo.mobi" />
+	<access origin="http://naorami.com" />
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="permissions" value="none" />
