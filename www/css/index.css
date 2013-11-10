@@ -5,6 +5,15 @@
     background: linear-gradient(top, #fff7dc, #fff);
     margin: 0 auto;
 }
+    .ui-datebox-header h4 {
+    color: white;
+}
+    .ui-datebox-flipcontent li.ui-body-a span {
+    color: white;
+}
+    .ui-input-datebox input {
+    margin-right: -6px !important;
+}
     #welcome img {
     max-width: 100%;
 }
