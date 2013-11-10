@@ -65,16 +65,18 @@
             }
         };
 
-
-        $('#signup').ajaxify(validation, function (res) {
-            $.mobile.navigate('#login', {
-                data: {
-                    notification: 'ההרשמה התבצעה בהצלחה, הכנסו לחשבון הדוא"ל שלכם, הפעילו את החשבון שלכם ותהנו!'
-                },
-                transition: 'slide'
-            });
-        }, function (err) {
-
+        $('#signup').ajaxify({
+            validation: validation,
+            success: function (res) {
+                $.mobile.navigate('#login', {
+                    data: {
+                        notification: 'ההרשמה התבצעה בהצלחה, הכנסו לחשבון הדוא"ל שלכם, הפעילו את החשבון שלכם ותהנו!'
+                    },
+                    transition: 'slide'
+                });
+            },
+            fail: function (err) {},
+            always: function (e) {}
         });
     });
 }(jQuery));
