@@ -1,4 +1,7 @@
-#welcome {
+body {
+    background-image: url('../img/redigo_bg.jpg');
+}
+    #welcome {
     text-align: center;
     background: -webkit-gradient(linear, top left, bottom left, from(#fff7dc), to(#fff));
     background: -webkit-linear-gradient(top, #fff7dc, #fff);

@@ -67,9 +67,14 @@
 
 
         $('#signup').ajaxify(validation, function (res) {
-            console.log('Ajax was successfull');
+            $.mobile.navigate('#login', {
+                data: {
+                    notification: 'ההרשמה התבצעה בהצלחה, הכנסו לחשבון הדוא"ל שלכם, הפעילו את החשבון שלכם ותהנו!'
+                },
+                transition: 'slide'
+            });
         }, function (err) {
-            console.log('There was a problem:', err);
+
         });
     });
 }(jQuery));
