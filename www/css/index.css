@@ -1,4 +1,10 @@
 #welcome {
     text-align: center;
+    background: -webkit-gradient(linear, top left, bottom left, from(#fff7dc), to(#fff));
+    background: -webkit-linear-gradient(top, #fff7dc, #fff);
+    background: linear-gradient(top, #fff7dc, #fff);
     margin: 0 auto;
+}
+    #welcome img {
+    max-width: 100%;
 }

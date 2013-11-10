@@ -7,6 +7,7 @@
 
     <link href="css/jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css">
     <link href="css/jquery.mobile.flatui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jqm-datebox.min.css" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet" type="text/css">
 
     <title>Redigo: Login Page</title>
@@ -18,6 +19,7 @@
             <h1>Welcome to Redigo!</h1>
             <h6>Loading...</h6>
             <img src="img/welcome-loader.gif">
+            <img src="img/Redigo.gif">
         </div>
     </div>
     <div id="login" data-role="page" data-title="Redigo: Login">
@@ -26,10 +28,10 @@
         </div>
         <div data-role="content">
             <form action="http://redigo.me/user" method="post" id="myform">
-                <input type="text" name="email" id="email" value="" placeholder="Enter email" />
-                <input type="text" name="full_name" id="name" value="" placeholder="Enter full name" />
-                <input name="password" id="password" value="" placeholder="Enter password" type="password" />
-                <input name="veriPass" id="veriPass" value="" placeholder="Verify password" type="password" />
+                <input type="text" name="email" id="email" value="" placeholder="דואר אלקטרוני" />
+                <input type="text" name="full_name" id="name" value="" placeholder="שם מלא" />
+                <input name="password" id="password" value="" placeholder="סיסמה" type="password" />
+                <input name="veriPass" id="veriPass" value="" placeholder="אימות סיסמה" type="password" />
                 <input name="birth_date" id="birth_date" type="text" data-role="datebox" data-options='{"mode":"datebox", "useNewStyle":true, "fieldsOrederOverride":"d m y"}' />
                 <button id="submit" type="submit" name="submit" value="submit" data-theme="b">Submit</button>
             </form>
