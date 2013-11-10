@@ -65,8 +65,13 @@
             }
         };
 
-
-        $('#signup').ajaxify(validation, function (res) {
+        $('#signup').ajaxify({
+            validation: validation,
+            success: function(res) {},
+            fail: function(err) {},
+            always: function(e) {}
+        });
+        $('#signup').ajaxify(function (res) {
             console.log('Ajax was successfull');
         }, function (err) {
             console.log('There was a problem:', err);
