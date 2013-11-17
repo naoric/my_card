@@ -21,3 +21,9 @@ div[data-role=page] {
 .rg-challenge-box h3{
   margin: 0;
 }
+
+a.rg-nav-panel {
+  font-size: 1.6em;
+  color: white; 
+  text-decoration: none;
+}
