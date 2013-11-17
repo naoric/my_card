@@ -1,7 +1,5 @@
 
 .ui-li, .ui-li.ui-field-contain{text-align: right;}
-.ui-panel.ui-panel-display-overlay {
-    background-color:
 div[data-role=page] {
     background-image: url('../img/redigo_bg.jpg');
 }
