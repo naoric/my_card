@@ -1,20 +1,21 @@
 /*jslint browser:true*/
 /*global jQuery:true*/
+/*global console:true*/
 (function ($) {
     "use strict";
 
     var $doc = $(document);
     $doc.on('pageinit', '#welcome', function (e) {
-        // @todo Check if user is already logged in
-        // @todo change from registration to login (if necessary)
-        setTimeout(function () {
-            $.mobile.navigate('#registration', {
-                transition: 'slideup'
-            });
-        }, 2000);
-    });
-    $doc.on('pageinit', '#login', function (e) {
-        // @todo Login form validation stuff
+        // TODO Check if user is already logged in
+        // TODO change from registration to login (if necessary)
+        $.ajax({
+            url: 'http://redigo.me/sync',
+            method: 'post',
+            dataType: 'json'
+        }).done(function (res) {
+            var target = (res.status === '1') ? '#profile' : '#login';
+            $.mobile.navigate(target, {transition: 'slideup'});
+        });
     });
     $doc.on('pageinit', '#registration', function (e) {
         var validation = {
@@ -40,7 +41,7 @@
                 email: {
                     required: true,
                     email: true
-                },
+                }
             },
             messages: {
                 password: {
@@ -64,17 +65,66 @@
                 }
             }
         };
-
         $('#signup').ajaxify({
             validation: validation,
-            success: function(res) {},
-            fail: function(err) {},
-            always: function(e) {}
+            success: function (res) {
+                var key, $this = $(this);
+                if (res.status === "success") {
+                    $.mobile.route('#login', {
+                        flash: {
+                            header: 'הרשמה התבצעה בהצלחה',
+                            content: 'ההרשמה התבצעה בהצלחה. הכנסו לחשבון הדוא"ל שלכם הפעילו את החשבון שלכם ותהנו!'
+                        },
+                        transition: 'slide'
+                    });
+                } else if (res.status === "failed") {
+                    $this.errors(res);
+                }
+            },
+            fail: function (err) {}, // Phonegap notification alert
+            always: function (e) {}
         });
-        $('#signup').ajaxify(function (res) {
-            console.log('Ajax was successfull');
-        }, function (err) {
-            console.log('There was a problem:', err);
+    });
+    $doc.on('pageinit', '#login', function (e) {
+        var validation = {
+            rules: {
+                'login-password': {
+                    required: true,
+                    minlength: 5
+                },
+                'login-email': {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                'login-password': {
+                    required: "אנא הכנס סיסמה",
+                    minlength: "הסיסמה חייבת להכיל לפחות 6 תוים"
+                },
+                'login-email': {
+                    required: "אנא הכנס כתובת דואר אלקטרוני",
+                    email: "כתובת דואר אלקטרוני אינה תקינה"
+                }
+            }
+        };
+
+        $('#login').ajaxify({
+            validation: validation,
+            success: function (res) {
+                if (res.status === 'success') {
+                    $.mobile.save({
+                        email: $('#login-email').val(),
+                        password: $('#login-password').val()
+                    });
+                    $.mobile.navigate('#profile', 'slide');
+                } else if (res.status === "failed") {
+                    $('#login-notes')
+                        .css('color', 'red')
+                        .html(res.message);
+                }
+            },
+            fail: function (err) {} // Phonegap notification alert
         });
     });
 }(jQuery));
