@@ -3,11 +3,9 @@
 /*global console:true*/
 (function ($) {
     "use strict";
-
+    
     var $doc = $(document);
     $doc.on('pageinit', '#welcome', function (e) {
-        // TODO Check if user is already logged in
-        // TODO change from registration to login (if necessary)
         $.ajax({
             url: 'http://redigo.me/sync',
             method: 'post',

@@ -1,5 +1,23 @@
 
 .ui-li, .ui-li.ui-field-contain{text-align: right;}
+.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e {
+    float: right;
+}
+
 div[data-role=page] {
     background-image: url('../img/redigo_bg.jpg');
+}
+
+.rg-challenge-box {
+    border: solid 1px #95b872;
+    box-shadow: 1px 1px 3px 1px #728d30;
+    border-radius: 7px;
+    font-size: small;
+    margin: 8px auto;
+    padding:  15px 0px;
+    background-color: #e7efc5;
+}
+
+.rg-challenge-box h3{
+  margin: 0;
 }

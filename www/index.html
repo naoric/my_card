@@ -13,15 +13,14 @@
 
     <title>Redigo: Login Page</title>
 </head>
-
 <body>
     <div id="welcome" data-role="page" data-title="Redigo: Welcome">
         <div data-role="content">
             <h1>Welcome to Redigo!</h1>
             <h6>Loading...</h6>
-            <img src="img/welcome-loader.gif">
+            <img src="img/welcome-loader.gif" alt="loader">
 
-            <img src="img/Redigo.gif">
+            <img src="img/Redigo.gif" alt="Redigo logo">
         </div>
     </div>
     <div id="registration" data-role="page" data-title="Redigo: Login">
@@ -57,10 +56,32 @@
     </div>
     <div id="profile" data-role="page" data-title="Redigo: Profile Page">
         <div data-role="header" data-position="fixed">
-            <h1>Profile Page</h1>
+            <h1>פרופיל משתמש</h1>
         </div>
         <div data-role="content">
-            Here will be the content of the profile page.
+            <div class="ui-grid-a rg-profile-top">
+                <div class="ui-block-a">
+                    <h2>יובל זלקה</h2>
+                    <p><strong>נקודות:</strong><span id="rg-field-points" class="rg-profile-field"> 144</span></p>
+                    <p><strong>תאריך לידה:</strong><span id="rg-field-age" class="rg-profile-field"> 15.11.1991</span></p>
+                    <p><strong>גיל:</strong><span id="rg-field-age" class="rg-profile-field"> 27</span></p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="http://lorempixel.com/100/150" alt="profile pic" />
+                </div>
+            </div>
+            <h3>הזדמנויות</h3>
+            <div class="rg-profile-content">
+                <div class="ui-grid-a rg-challenge-box">
+                    <div class="ui-block-a">
+                      <h3>378</h3>
+
+                    </div>
+                    <div class="ui-block-b">
+                    
+                    </div>
+                </div>
+            </div>
         </div>
         <div data-role="footer" data-position="fixed">
             <h2>Will Contain Stuff</h2>
