@@ -12,9 +12,11 @@
     <file path="/BuissinessPage.html" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384089071023" ignored="false" />
     <file path="/essentials.js" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384090219650" ignored="false" />
     <file path="/index.js" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384090149302" ignored="false" />
-    <file path="/business.html" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384100376332" ignored="false" />
+    <file path="/business.html" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384724234042" ignored="false" />
     <file path="/dummy.xml" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384092706168" ignored="false" />
     <file path="/redigo.css" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384096598762" ignored="false" />
+    <file path="/sidemenu.js" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384721124320" ignored="false" />
+    <file path="/business.css" changelist="9adf69b4-402c-4ae5-b31b-33d82d879e8c" time="1384721262035" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +39,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="42" selection-start="445" selection-end="445" vertical-scroll-proportion="12.115385">
+            <state line="10" column="42" selection-start="445" selection-end="445" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
@@ -46,12 +48,17 @@
       <file leaf-file-name="business.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/business.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="112" selection-start="640" selection-end="640" vertical-scroll-proportion="0.45525292">
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="38" column="84" selection-start="1143" selection-end="1143" vertical-scroll-proportion="1.2470818">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testmenu.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testmenu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="27" selection-start="1891" selection-end="1891" vertical-scroll-proportion="-16.346153">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,7 +66,7 @@
       <file leaf-file-name="redigo.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/redigo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="22" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+            <state line="3" column="22" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -68,10 +75,8 @@
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="13" selection-start="2014" selection-end="2276" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="65" column="13" selection-start="2075" selection-end="2075" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,7 +84,7 @@
       <file leaf-file-name="essentials.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/essentials.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="591" selection-end="1166" vertical-scroll-proportion="0.0">
+            <state line="68" column="0" selection-start="1949" selection-end="1949" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,6 +112,9 @@
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/essentials.js" />
         <option value="$PROJECT_DIR$/css/redigo.css" />
+        <option value="$PROJECT_DIR$/testmenu.html" />
+        <option value="$PROJECT_DIR$/js/sidemenu.js" />
+        <option value="$PROJECT_DIR$/css/business.css" />
         <option value="$PROJECT_DIR$/business.html" />
       </list>
     </option>
@@ -175,20 +183,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -200,8 +194,8 @@
     <property name="options.lastSelected" value="preferences.toDoOptions" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -268,13 +262,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1369" height="726" extended-state="1" />
-    <editor active="true" />
+    <frame x="1" y="1" width="1369" height="726" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286219" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2518797" sideWeight="0.6713781" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2518797" sideWeight="0.6713781" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -352,6 +346,41 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="42" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="112" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/redigo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="22" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="13" selection-start="2014" selection-end="2276" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/essentials.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="591" selection-end="1166" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="41" selection-start="3164" selection-end="3164" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -366,42 +395,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="13" selection-start="2014" selection-end="2276" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="65" column="13" selection-start="2075" selection-end="2075" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/essentials.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="591" selection-end="1166" vertical-scroll-proportion="0.0">
+        <state line="68" column="0" selection-start="1949" selection-end="1949" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="42" selection-start="445" selection-end="445" vertical-scroll-proportion="12.115385">
+        <state line="10" column="42" selection-start="445" selection-end="445" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testmenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="27" selection-start="1891" selection-end="1891" vertical-scroll-proportion="-16.346153">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/redigo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="22" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+        <state line="3" column="22" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/business.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="112" selection-start="640" selection-end="640" vertical-scroll-proportion="0.45525292">
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="38" column="84" selection-start="1143" selection-end="1143" vertical-scroll-proportion="1.2470818">
+          <folding />
         </state>
       </provider>
     </entry>
