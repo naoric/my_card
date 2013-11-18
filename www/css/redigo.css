@@ -1,29 +1,62 @@
+.ui-li,
+.ui-li.ui-field-contain {
+  text-align: right;
+}
 
-.ui-li, .ui-li.ui-field-contain{text-align: right;}
-.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e {
-    float: right;
+.ui-block-a,
+.ui-block-b,
+.ui-block-c,
+.ui-block-d,
+.ui-block-e {
+  float: right;
 }
 
 div[data-role=page] {
-    background-image: url('../img/redigo_bg.jpg');
+  background-image: url('../img/redigo_bg.jpg');
 }
 
 .rg-challenge-box {
-    border: solid 1px #95b872;
-    box-shadow: 1px 1px 3px 1px #728d30;
-    border-radius: 7px;
-    font-size: small;
-    margin: 8px auto;
-    padding:  15px 0px;
-    background-color: #e7efc5;
+  border: solid 1px #95b872;
+  -webkit-box-shadow: 1px 1px 3px 1px #728d30;
+  box-shadow: 1px 1px 3px 1px #728d30;
+  border-radius: 7px;
+  font-size: small;
+  margin: 8px auto;
+  padding: 15px 0px;
+  background-color: #e7efc5;
 }
 
-.rg-challenge-box h3{
-  margin: 0;
+.rg-challenge-box h3 {
+  margin: -15px 0;
+  padding: 10px;
+  float: right;
+  background-color: #476f19;
+  color: white;
+  text-shadow: #476f19 0 1px 0;
+  border-radius: 7px;
 }
 
-a.rg-nav-panel {
+.rg-challenge-box h2,
+.rg-challenge-box h4,
+.rg-challenge-box h5,
+.rg-challenge-box h6 {
+  margin: 0 0 15px 0;
+}
+
+.rg-challenge-box h4 {
+  font-size: 1.1em;
+}
+
+.rg-challenge-box a.rg-nav-panel {
   font-size: 1.6em;
-  color: white; 
+  color: white;
   text-decoration: none;
+}
+
+.rg-challenge-box .ui-block-a {
+  width: 20%;
+}
+
+.rg-challenge-box .ui-block-b {
+  width: 80%;
 }
