@@ -107,7 +107,7 @@
             }
         };
 
-        $('#login').ajaxify({
+        $('#login-form').ajaxify({
             validation: validation,
             success: function (res) {
                 if (res.status === 'success') {

@@ -36,7 +36,7 @@
                 <input name="veriPass" id="veriPass" value="" placeholder="אימות סיסמה" type="password" />
                 <input name="birth_date" id="birth_date" type="text" data-role="datebox" placeholder="תאריך לידה" 
                 data-options='{"mode":"flipbox", "overrideDateFormat":"%d.%m.%Y", "useFocus": true, "useButton": false, "usePlaceHolder": true}' />
-                <button id="submit" type="submit" name="submit" value="submit" data-theme="b">הרשם</button>
+                <button type="submit" name="submit" value="submit" data-theme="b">הרשם</button>
             </form>
         </div>
     </div>
@@ -45,10 +45,10 @@
             <h1>התחבר</h1>
         </div>
         <div data-role="content">
-            <form action="http://redigo.me/login" method="post" id="login">
+            <form action="http://redigo.me/login" method="post" id="login-form">
                 <input type="email" name="login-email" id="login-email" value="" placeholder="דואר אלקטרוני" />
                 <input name="login-password" id="login-password" value="" placeholder="סיסמה" type="password" />
-                <button id="submit" type="submit" name="submit" value="submit" data-theme="b">כניסה</button>
+                <button type="submit" name="submit" value="submit" data-theme="b">כניסה</button>
             </form>
             <a href="#registration" data-transition="slide" data-direction="reverse" data-role="button">משתמש חדש</a>
             <h4 id="login-notes"></h4>

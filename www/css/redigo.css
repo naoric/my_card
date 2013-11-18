@@ -9,13 +9,29 @@
 .ui-block-e {
   float: right;
 }
-div[data-role=page] {
-  background-image: url('../img/redigo_bg.jpg');
+.ui-body-c,
+.ui-overlay-c {
+  background: url('../img/redigo_bg.jpg');
 }
 a.rg-nav-panel {
   color: white;
   text-decoration: none;
   font-size: 1.6em;
+}
+.rg-profile-field {
+  font-size: 0.7em;
+}
+.rg-profile-top .ui-block-a {
+  width: 60%;
+}
+.rg-profile-top .ui-block-b {
+  width: 40%;
+}
+.rg-profile-top h2 {
+  margin-top: 0;
+}
+.rg-profile-top img {
+  max-width: 100%;
 }
 .rg-challenge-box {
   border: solid 1px #95b872;

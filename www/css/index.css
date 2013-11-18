@@ -33,27 +33,6 @@ body {
 #profile p {
     margin: 7px 0;
 }
-
-.rg-profile-field {
-    font-size: 0.7em;
-}
-
-.rg-profile-top .ui-block-a {
-    width: 60%;
-}
-
-.rg-profile-top .ui-block-b {
-    width: 40%;
-}
-
-.rg-profile-top h2 {
-    margin-top: 0;
-}
-
-.rg-profile-top img {
-    max-width: 100%;
-}
-
 #rg-field-points {
     background-color: #715125;
     display: inline-block;

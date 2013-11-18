@@ -6,17 +6,17 @@
   float: right;
 }
 
-div[data-role=page] {
-  background-image: url('../img/redigo_bg.jpg');
+.ui-body-c, .ui-overlay-c {
+  background: url('../img/redigo_bg.jpg');
 }
 
 a.rg-nav-panel {
-  color:  white;
+  color: white;
   text-decoration: none;
   font-size: 1.6em;
 }
 
-.ab-block(@aBlock: 20%; @bBlock: 80%){
+.ab-block(@aBlock: 20%; @bBlock: 80%) {
   .ui-block-a {
     width: @aBlock;
   }
@@ -25,6 +25,23 @@ a.rg-nav-panel {
     width: @bBlock;
   }
 }
+
+.rg-profile-field {
+  font-size: 0.7em;
+}
+
+.rg-profile-top {
+  .ab-block(60%, 40%);
+
+  h2 {
+    margin-top: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
 
 .rg-challenge-box {
   border: solid 1px #95b872;
@@ -48,7 +65,7 @@ a.rg-nav-panel {
   h2, h4, h5, h6 {
     margin: 0 0 15px 0;
   }
-  
+
   h4 {
     font-size: 1.1em;
   }
