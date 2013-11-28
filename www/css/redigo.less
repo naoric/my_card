@@ -18,19 +18,21 @@ a.rg-nav-panel {
   font-size: 1.6em;
 }
 
-.ab-block(@aBlock:20%; @bBlock:80%) {
+.ab-block(@aBlock: 20%; @bBlock: 80%) {
   .ui-block-a {
     width: @aBlock;
   }
+
   .ui-block-b {
     width: @bBlock;
   }
 }
 
-.abc-block(@aBlock:33%;@bBlock:33%;@cBlock:33%) { 
+.abc-block(@aBlock: 33%; @bBlock: 33%; @cBlock: 33%) {
   .ab-block(@aBlock, @bBlock);
+
   .ui-block-c {
-    width:  @cBlock;
+    width: @cBlock;
   }
 }
 
@@ -40,7 +42,6 @@ a.rg-nav-panel {
 
 .rg-profile-top {
   .ab-block(60%, 40%);
-
   h2 {
     margin-top: 0;
   }
@@ -68,6 +69,11 @@ a.rg-nav-panel {
     text-shadow: #476f19 0 1px 0;
     border-radius: 7px;
   }
+  
+  .ui-grid-b > :nth-child(n) {
+    margin-right: 0;
+    margin-left: 0;
+  }
 
   h2, h4, h5, h6 {
     margin: 0 0 15px 0;
@@ -80,11 +86,16 @@ a.rg-nav-panel {
   img {
     max-width: 100%;
   }
+
+  .rg-challenge-content {
+    padding: 3px 10px;
+  }
   
   a.rg-nav-panel {
     font-size: 1.6em;
     color: white;
     text-decoration: none;
   }
+
   .abc-block(20%, 60%, 20%);
 }
