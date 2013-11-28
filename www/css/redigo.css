@@ -511,6 +511,10 @@ a.rg-nav-panel {
   text-shadow: #476f19 0 1px 0;
   border-radius: 7px;
 }
+.rg-challenge-box .ui-grid-b > :nth-child(n) {
+  margin-right: 0;
+  margin-left: 0;
+}
 .rg-challenge-box h2,
 .rg-challenge-box h4,
 .rg-challenge-box h5,
@@ -522,6 +526,9 @@ a.rg-nav-panel {
 }
 .rg-challenge-box img {
   max-width: 100%;
+}
+.rg-challenge-box .rg-challenge-content {
+  padding: 3px 10px;
 }
 .rg-challenge-box a.rg-nav-panel {
   font-size: 1.6em;
