@@ -494,13 +494,13 @@ a.rg-nav-panel {
   border-radius: 7px;
   font-size: small;
   margin: 8px auto;
-  padding: 15px 0px;
+  padding: 0;
   background-color: #e7efc5;
 }
 .rg-challenge-box h3 {
-  margin: -15px 0;
-  padding: 10px;
-  float: right;
+  padding: 7px;
+  margin: 0;
+  float: left;
   background-color: #476f19;
   color: white;
   text-shadow: #476f19 0 1px 0;
@@ -515,6 +515,9 @@ a.rg-nav-panel {
 .rg-challenge-box h4 {
   font-size: 1.1em;
 }
+.rg-challenge-box img {
+  max-width: 100%;
+}
 .rg-challenge-box a.rg-nav-panel {
   font-size: 1.6em;
   color: white;
@@ -524,5 +527,8 @@ a.rg-nav-panel {
   width: 20%;
 }
 .rg-challenge-box .ui-block-b {
-  width: 80%;
+  width: 60%;
+}
+.rg-challenge-box .ui-block-c {
+  width: 20%;
 }

@@ -18,13 +18,19 @@ a.rg-nav-panel {
   font-size: 1.6em;
 }
 
-.ab-block(@aBlock: 20%; @bBlock: 80%) {
+.ab-block(@aBlock:20%; @bBlock:80%) {
   .ui-block-a {
     width: @aBlock;
   }
-
   .ui-block-b {
     width: @bBlock;
+  }
+}
+
+.abc-block(@aBlock:33%;@bBlock:33%;@cBlock:33%) { 
+  .ab-block(@aBlock, @bBlock);
+  .ui-block-c {
+    width:  @cBlock;
   }
 }
 
@@ -44,20 +50,19 @@ a.rg-nav-panel {
   }
 }
 
-
 .rg-challenge-box {
   border: solid 1px #95b872;
   box-shadow: 1px 1px 3px 1px #728d30;
   border-radius: 7px;
   font-size: small;
   margin: 8px auto;
-  padding: 15px 0px;
+  padding: 0;
   background-color: #e7efc5;
 
   h3 {
-    margin: -15px 0;
-    padding: 10px;
-    float: right;
+    padding: 7px;
+    margin: 0;
+    float: left;
     background-color: #476f19;
     color: white;
     text-shadow: #476f19 0 1px 0;
@@ -72,11 +77,14 @@ a.rg-nav-panel {
     font-size: 1.1em;
   }
 
+  img {
+    max-width: 100%;
+  }
+  
   a.rg-nav-panel {
     font-size: 1.6em;
     color: white;
     text-decoration: none;
   }
-
-  .ab-block(20%, 80%);
+  .abc-block(20%, 60%, 20%);
 }
