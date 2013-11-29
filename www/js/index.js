@@ -125,4 +125,15 @@
             fail: function (err) {} // Phonegap notification alert
         });
     });
+	$doc.on('pageinit','#profile',function(){
+	
+				window.mySwipe = new Swipe(document.getElementById('slider'), {
+					speed: 400,
+					continuous: true,
+					disableScroll: false,
+					stopPropagation: false,
+					callback: function(index, elem) {},
+					transitionEnd: function(index, elem) {}
+				});
+	});
 }(jQuery));
