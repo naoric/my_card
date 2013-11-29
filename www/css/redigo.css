@@ -544,3 +544,19 @@ a.rg-nav-panel {
 .rg-challenge-box .ui-block-c {
   width: 20%;
 }
+
+.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+	direction:ltr;
+}
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+}
+.swipe-wrap > div {
+	float: left;
+	width: 100%;
+	position: relative;
+}
