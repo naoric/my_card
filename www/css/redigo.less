@@ -52,14 +52,17 @@ a.rg-nav-panel {
 }
 
 .rg-challenge-box {
-  border: solid 1px #95b872;
-  box-shadow: 1px 1px 3px 1px #728d30;
   border-radius: 7px;
   font-size: small;
-  margin: 8px auto;
+  margin: 8px 0;
   padding: 0;
   background-color: #e7efc5;
   overflow: hidden;
+
+  .ui-grid-b >:nth-child(n) {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
 
   h3 {
     padding: 7px;
@@ -91,7 +94,6 @@ a.rg-nav-panel {
   .rg-challenge-content {
     padding: 3px 10px;
   }
-  
   a.rg-nav-panel {
     font-size: 1.6em;
     color: white;
@@ -99,4 +101,22 @@ a.rg-nav-panel {
   }
 
   .abc-block(20%, 60%, 20%);
+}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  direction: ltr;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-wrap > div {
+  float: left;
+  width: 99%;
+  position: relative;
 }
