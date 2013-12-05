@@ -12,6 +12,9 @@
 bin/
 gen/
 
+# compiled platform files
+platforms/
+
 # Local configuration file (sdk path, etc)
 local.properties
 
