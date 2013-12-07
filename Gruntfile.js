@@ -16,9 +16,13 @@ module.exports = function(grunt) {
 					paths : ['www/css'],
 					compress : true
 				},
-				files : {
-					"www/css/min/*.min.css" : "www/css/*.less"
-				}
+				files : [{
+					expand : true,
+					cwd : 'www/',
+					src : ['css/*.less'],
+					dest : 'www/css/min/',
+					ext : '.min.css'
+				}]
 			}
 		},
 		watch : {
