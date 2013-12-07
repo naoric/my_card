@@ -28,7 +28,7 @@
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("../YOUR IMAGE PATH/glyphicons-halflings-white.png");
+  background-image: url("../img/glyphicons-halflings-white.png");
 }
 .icon-glass {
   background-position: 0 0;
@@ -490,6 +490,9 @@ a.rg-nav-panel {
 .rg-profile-field {
   font-size: 0.7em;
 }
+.rg-header-btn-red {
+  background: #d37979;
+}
 .rg-profile-top .ui-block-a {
   width: 60%;
 }
@@ -571,8 +574,15 @@ a.rg-nav-panel {
 .rg-challenge-box .ui-block-c {
   width: 20%;
 }
+.rg-business-list {
+  text-shadow: none;
+  margin-top: 0 !important;
+}
 .rg-business-list li {
-  background-color: #CB8F8F;
+  background-color: #C1CAD1;
+}
+.rg-business-list img {
+  margin-right: 0;
 }
 .ui-input-search,
 div.ui-input-text {
