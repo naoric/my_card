@@ -25,6 +25,21 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+		stylus: {
+			node : {
+				options: {
+					paths : ["www/css"],
+					compile: true
+				},
+				files: [{
+					expand: true,
+					cwd: 'www/',
+					src: ['css/*.styl'],
+					dest: 'www/css/min/',
+					ext: '.min.css'
+				}]
+			}
+		},
 		watch : {
 			files : "www/css/*.less",
 			tasks : ["less"]
@@ -32,6 +47,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-install-dependencies');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 

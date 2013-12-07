@@ -454,6 +454,7 @@
   background-position: -456px -144px;
 }
 /* -----------/ GLYPH ICONS SUPPORT -------------------*/
+/* -----------/ RIGHT TO LEFT ISSUES -------------------*/
 .ui-li,
 .ui-li.ui-field-contain {
   text-align: right;
@@ -465,6 +466,18 @@
 .ui-block-e {
   float: right;
 }
+.ul-li-aside {
+  float: left;
+}
+.ui-li-has-arrow .ui-btn-inner a.ui-link-inherit,
+.ui-li-static.ui-li-has-arrow {
+  padding-left: 40px;
+}
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit,
+.ui-li-static.ui-li-has-thumb {
+  padding-right: 100px;
+}
+/* -----------/ RIGHT TO LEFT ISSUES -------------------*/
 .ui-body-c,
 .ui-overlay-c {
   background: url('../img/redigo_bg.jpg');
@@ -558,6 +571,33 @@ a.rg-nav-panel {
 .rg-challenge-box .ui-block-c {
   width: 20%;
 }
+.rg-business-list li {
+  background-color: #CB8F8F;
+}
+.ui-input-search,
+div.ui-input-text {
+  background-color: #fff;
+}
+/* ----------- SWIPEJS STUFF -------------------*/
+.rg-swipe-scroll {
+  text-align: center;
+}
+.rg-swipe-scroll ul {
+  display: inline-block;
+  font-size: 1.2em;
+  padding-left: 0;
+  margin: 0 auto;
+  list-style-type: circle;
+  list-style-position: inside;
+  color: #667BAB;
+}
+.rg-swipe-scroll ul > li {
+  float: left;
+  margin: 0 3px;
+}
+.rg-swipe-scroll ul > li.current {
+  list-style-type: disc;
+}
 .swipe {
   overflow: hidden;
   visibility: hidden;
@@ -573,7 +613,4 @@ a.rg-nav-panel {
   width: 90%;
   position: relative;
 }
-.ui-input-search,
-div.ui-input-text {
-  background-color: #fff;
-}
+/* -----------/ SWIPEJS STUFF -------------------*/

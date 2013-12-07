@@ -105,4 +105,12 @@
             }
         }
     };
+    
+    window.one = function (sel) {
+    	return document.querySelector(sel);
+    };
+    
+    window.all = function (sel) {
+    	return document.querySelectorAll(sel);
+    };
 }(jQuery));
