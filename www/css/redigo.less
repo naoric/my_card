@@ -1,4 +1,5 @@
 @import "glyph-icons";
+/* -----------/ GLYPH ICONS SUPPORT -------------------*/
 
 .ui-li, .ui-li.ui-field-contain {
   text-align: right;
@@ -18,7 +19,7 @@ a.rg-nav-panel {
   font-size: 1.6em;
 }
 
-.ab-block(@aBlock: 20%; @bBlock: 80%) {
+.ab-block(@aBlock: 20%, @bBlock: 80%) {
   .ui-block-a {
     width: @aBlock;
   }
@@ -28,12 +29,18 @@ a.rg-nav-panel {
   }
 }
 
-.abc-block(@aBlock: 33%; @bBlock: 33%; @cBlock: 33%) {
+.abc-block(@aBlock: 33%, @bBlock: 33%, @cBlock: 33%) {
   .ab-block(@aBlock, @bBlock);
 
   .ui-block-c {
     width: @cBlock;
   }
+}
+
+.border-radius(@radius) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
 }
 
 .rg-profile-field {
@@ -42,6 +49,7 @@ a.rg-nav-panel {
 
 .rg-profile-top {
   .ab-block(60%, 40%);
+
   h2 {
     margin-top: 0;
   }
@@ -51,15 +59,25 @@ a.rg-nav-panel {
   }
 }
 
+.rg-separator {
+  display: block;
+  background-color: #4c718d;
+  color: #fff;
+  text-shadow: none;
+  padding-right: 3%;
+  margin-bottom: 0;
+  .border-radius(8px 0 0 0);
+}
+
 .rg-challenge-box {
-  border-radius: 7px;
+  .border-radius(0 0 7px 7px);
   font-size: small;
-  margin: 8px 0;
+  margin: 0;
   padding: 0;
   background-color: #e7efc5;
   overflow: hidden;
 
-  .ui-grid-b >:nth-child(n) {
+  .ui-grid-b > :nth-child(n) {
     margin-right: 0px;
     margin-left: 0px;
   }
@@ -71,9 +89,9 @@ a.rg-nav-panel {
     background-color: #476f19;
     color: white;
     text-shadow: #476f19 0 1px 0;
-    border-radius: 7px;
+    .border-radius(0 0 7px 0);
   }
-  
+
   .ui-grid-b > :nth-child(n) {
     margin-right: 0;
     margin-left: 0;
@@ -94,6 +112,7 @@ a.rg-nav-panel {
   .rg-challenge-content {
     padding: 3px 10px;
   }
+
   a.rg-nav-panel {
     font-size: 1.6em;
     color: white;
@@ -113,10 +132,14 @@ a.rg-nav-panel {
 .swipe-wrap {
   overflow: hidden;
   position: relative;
+
+  & > div {
+    float: left;
+    width: 90%;
+    position: relative;
+  }
 }
 
-.swipe-wrap > div {
-  float: left;
-  width: 99%;
-  position: relative;
+.ui-input-search, div.ui-input-text {
+  background-color: #fff;
 }
