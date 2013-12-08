@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>avalible busnisses in the area</title>
+	<link rel="stylesheet" href="css/alonic.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+	<script src="js/jquery-1.10.2.min.js"></script> 
+		<script src="js/business.js"></script> 
+
+	<script src="js/jquery.mobile-1.3.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" id="page1" class="ui-responsive-panel">
+
+		<div data-role="header">
+			<a href="#mypanel" data-icon="bars" data-theme="e"></a>
+			<h1>Aviliable business</h1>
+		</div>
+		<div data-role="content">
+				
+			<div data-demo-html="true">
+				<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		
+				</ul>
+			</div>
+		
+
+
+			<ul id="ulist" data-role="listview" data-split-icon="gear" data-split-theme="d">
+
+			</ul>
+			
+			<a id="done_Btn" data-role="button" data-theme="b" href="customer_Home.html" data-transition="flip" rel="external" data-icon="check" data-iconpos="right">
+				Done
+			</a>
+		</div>
+		<div id="mypanel" data-role="panel" data-position="right" data-position-fixed="false" data-display="reveal" data-theme="a">
+
+			<ul data-role="listview" data-theme="e" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+				<li data-icon="delete" style="background-color:#111;">
+					<a href="#" data-rel="close">Close menu</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility screen reader">
+					<a href="customer_Home.html" data-transition="flip" rel="external">Customer Home</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility sucreen reader">
+					<a href="business.html" data-transition="flip" rel="external">Search Business</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility screen reader">
+					<a href="top_Users.html" data-transition="flip" rel="external">Top App Users</a>
+				</li>
+				<li data-filtertext="wai-aria voiceover accessibility screen reader">
+					<a href="challenges.html" data-transition="flip" rel="external">challenges</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- <script src="js/business.js"></script>-->
+</body>
+
+</html>
