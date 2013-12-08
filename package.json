@@ -1,0 +1,26 @@
+{
+  "name": "my_card",
+  "version": "0.0.0",
+  "description": "Loyalty Card PhoneGap Application",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naoric/my_card.git"
+  },
+  "author": "Naor Ami",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/naoric/my_card/issues"
+  },
+  "homepage": "https://github.com/naoric/my_card",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-less": "latest",
+    "grunt-install-dependencies": "~0.1.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-stylus": "latest"
+  }
+}
