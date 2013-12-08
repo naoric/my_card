@@ -30,9 +30,7 @@ body {
     text-shadow: none;
 }
 
-#profile p {
-    margin: 7px 0;
-}
+
 #rg-field-points {
     background-color: #715125;
     display: inline-block;

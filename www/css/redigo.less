@@ -3,6 +3,8 @@
 
 /* -----------/ RIGHT TO LEFT ISSUES -------------------*/
 
+@theme-color: #87C9E8;
+
 .ui-li, .ui-li.ui-field-contain {
   text-align: right;
 }
@@ -28,7 +30,8 @@
 /* -----------/ RIGHT TO LEFT ISSUES -------------------*/
 
 .ui-body-c, .ui-overlay-c {
-  background: url('../img/redigo_bg.jpg');
+  /*background: url('../img/redigo_bg.jpg');*/
+  background: -webkit-radial-gradient(50% 0, circle, #85CAEB 0%, #4F88A6 100%);
 }
 
 a.rg-nav-panel {
@@ -70,12 +73,31 @@ a.rg-nav-panel {
 }
 
 .rg-profile-top {
-  .ab-block(60%, 40%);
-
-  h2 {
-    margin-top: 0;
+  background-color: lighten(@theme-color, 20%);
+  border-radius: 0 5px 0 0;
+  padding: 5px 8px;
+  text-shadow: none;
+  margin-top: 15px;
+  width: 90%;
+  
+  .rg-profile-avatar {
+    float: left;
+    padding: 4px;
+    background-color: lighten(@theme-color, 10%);
+    border: solid 1px black;
+    margin: -20px 0 0 -20px;
   }
-
+  
+  h2 {
+    margin:  0 0 7px;
+    font-size: 1.3em;
+  }
+  
+  p {
+    font-size: 0.8em;
+    margin: 4px 0;
+  }
+  
   img {
     max-width: 100%;
   }
@@ -83,10 +105,11 @@ a.rg-nav-panel {
 
 .rg-separator {
   display: block;
-  background-color: #4c718d;
+  background-color: darken(@theme-color, 45%);
   color: #fff;
   text-shadow: none;
-  padding-right: 3%;
+  font-size: 1.1em;
+  padding: 2px 8px;
   margin-bottom: 0;
   .border-radius(8px 0 0 0);
 }
@@ -94,9 +117,10 @@ a.rg-nav-panel {
 .rg-challenge-box {
   .border-radius(0 0 7px 7px);
   font-size: small;
+  text-shadow: none;
   margin: 0;
   padding: 0;
-  background-color: #e7efc5;
+  background-color: lighten(spin(@theme-color, 180), 20%);
   overflow: hidden;
 
   .ui-grid-b > :nth-child(n) {
@@ -145,11 +169,18 @@ a.rg-nav-panel {
 }
 
 .rg-business-list {
+  @list-bg-color: #ebebc6;
+  
   text-shadow: none;
   margin-top: 0 !important;
-  li {
-    background-color: #C1CAD1;
+  &.ui-corner-all {
+    .border-radius(0 0 6px 6px);
   }
+  .ui-btn {
+    background-color: @list-bg-color;
+    border: 1px solid darken(@list-bg-color, 20%);
+  }
+  
   img {
     margin-right: 0;
   }
@@ -169,7 +200,7 @@ a.rg-nav-panel {
     margin: 0 auto;
     list-style-type: circle;
     list-style-position: inside;
-    color: #667BAB;
+    color: #cfdec1;
     & >li {
       float: left;
       margin: 0 3px;

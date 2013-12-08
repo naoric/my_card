@@ -480,7 +480,9 @@
 /* -----------/ RIGHT TO LEFT ISSUES -------------------*/
 .ui-body-c,
 .ui-overlay-c {
-  background: url('../img/redigo_bg.jpg');
+  /*background: url('../img/redigo_bg.jpg');*/
+
+  background: -webkit-radial-gradient(50% 0, circle, #85caeb 0%, #4f88a6 100%);
 }
 a.rg-nav-panel {
   color: white;
@@ -493,24 +495,39 @@ a.rg-nav-panel {
 .rg-header-btn-red {
   background: #d37979;
 }
-.rg-profile-top .ui-block-a {
-  width: 60%;
+.rg-profile-top {
+  background-color: #ddf0f8;
+  border-radius: 0 5px 0 0;
+  padding: 5px 8px;
+  text-shadow: none;
+  margin-top: 15px;
+  width: 90%;
 }
-.rg-profile-top .ui-block-b {
-  width: 40%;
+.rg-profile-top .rg-profile-avatar {
+  float: left;
+  padding: 4px;
+  background-color: #b2dcf0;
+  border: solid 1px black;
+  margin: -20px 0 0 -20px;
 }
 .rg-profile-top h2 {
-  margin-top: 0;
+  margin: 0 0 7px;
+  font-size: 1.3em;
+}
+.rg-profile-top p {
+  font-size: 0.8em;
+  margin: 4px 0;
 }
 .rg-profile-top img {
   max-width: 100%;
 }
 .rg-separator {
   display: block;
-  background-color: #4c718d;
+  background-color: #165673;
   color: #fff;
   text-shadow: none;
-  padding-right: 3%;
+  font-size: 1.1em;
+  padding: 2px 8px;
   margin-bottom: 0;
   -moz-border-radius: 8px 0 0 0;
   -webkit-border-radius: 8px 0 0 0;
@@ -521,9 +538,10 @@ a.rg-nav-panel {
   -webkit-border-radius: 0 0 7px 7px;
   border-radius: 0 0 7px 7px;
   font-size: small;
+  text-shadow: none;
   margin: 0;
   padding: 0;
-  background-color: #e7efc5;
+  background-color: #f8e5dd;
   overflow: hidden;
 }
 .rg-challenge-box .ui-grid-b > :nth-child(n) {
@@ -578,8 +596,14 @@ a.rg-nav-panel {
   text-shadow: none;
   margin-top: 0 !important;
 }
-.rg-business-list li {
-  background-color: #C1CAD1;
+.rg-business-list.ui-corner-all {
+  -moz-border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+}
+.rg-business-list .ui-btn {
+  background-color: #ebebc6;
+  border: 1px solid #d1d17a;
 }
 .rg-business-list img {
   margin-right: 0;
@@ -599,7 +623,7 @@ div.ui-input-text {
   margin: 0 auto;
   list-style-type: circle;
   list-style-position: inside;
-  color: #667BAB;
+  color: #cfdec1;
 }
 .rg-swipe-scroll ul > li {
   float: left;
