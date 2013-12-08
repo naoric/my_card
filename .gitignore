@@ -8,6 +8,9 @@
 # Java class files
 *.class
 
+# Remove unnecessary compiled stuff
+/platforms/*
+
 # generated files
 bin/
 gen/
