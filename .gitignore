@@ -9,7 +9,7 @@
 *.class
 
 # Remove unnecessary compiled stuff
-/platforms/*
+platforms/
 
 # generated files
 bin/
