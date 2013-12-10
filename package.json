@@ -21,6 +21,7 @@
     "grunt-contrib-less": "latest",
     "grunt-install-dependencies": "~0.1.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-stylus": "latest"
+    "grunt-contrib-stylus": "latest",
+    "grunt-contrib-sass": "~0.5.1"
   }
 }
