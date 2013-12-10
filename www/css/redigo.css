@@ -480,7 +480,6 @@
 .ui-body-c,
 .ui-overlay-c {
   /*background: url('../img/redigo_bg.jpg');*/
-
   background: -webkit-radial-gradient(50% 0, circle, #85caeb 0%, #4f88a6 100%);
 }
 a.rg-nav-panel {
@@ -497,7 +496,6 @@ a.rg-nav-panel {
 }
 .rg-profile-top {
   background-color: #ddf0f8;
-  border-radius: 0 5px 0 0;
   padding: 5px 8px;
   text-shadow: none;
 }
@@ -679,6 +677,7 @@ div.ui-input-text {
 .rg-user.rg-profile-top {
   margin-top: 15px;
   width: 90%;
+  border-radius: 0 5px 0 0;
 }
 .rg-user.rg-profile-top .rg-profile-avatar {
   float: left;
@@ -691,7 +690,6 @@ div.ui-input-text {
   padding: 0;
 }
 .rg-business.rg-profile-top {
-  overflow-y: auto;
   padding: 0 0 5px 0;
 }
 .rg-business.rg-profile-top .rg-business-details {

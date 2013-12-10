@@ -8,7 +8,7 @@ module.exports = function (grunt) {
           compress: false
         },
         files: {
-          "www/css/redigo.css": "www/css/redigo.less"
+          "www/css/redigo.css": "www/css/less/redigo.less"
         }
       },
       min: {
@@ -52,8 +52,8 @@ module.exports = function (grunt) {
       }
     },
     watch: {
-      files: "www/css/*.less",
-      tasks: ["less"]
+      files: "www/css/less/*.less",
+      tasks: ["less:dev"]
     }
   });
 
