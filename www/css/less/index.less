@@ -1,12 +1,13 @@
-body {
-    background-image: url('../img/redigo_bg.jpg');
-}
 #welcome {
     text-align: center;
     background: -webkit-gradient(linear, top left, bottom left, from(#fff7dc), to(#fff));
     background: -webkit-linear-gradient(top, #fff7dc, #fff);
     background: linear-gradient(top, #fff7dc, #fff);
     margin: 0 auto;
+    
+    img {
+      max-width: 100%;
+    }
 }
 .ui-datebox-header h4 {
     color: white;
@@ -16,9 +17,6 @@ body {
 }
 .ui-input-datebox input {
     margin-right: -6px !important;
-}
-#welcome img {
-    max-width: 100%;
 }
 
 #login #login-notes {
@@ -30,7 +28,6 @@ body {
     text-shadow: none;
 }
 
-
 #rg-field-points {
     background-color: #715125;
     display: inline-block;
@@ -38,4 +35,17 @@ body {
     color: white;
     margin-right: 5%;
     border-radius: 5px 10px;
+}
+
+.rg-user.rg-profile-top {
+  margin-top: 15px;
+  width: 90%;
+  
+  .rg-profile-avatar {
+    float: left;
+    padding: 4px;
+    background-color: lighten(@theme-color, 10%);
+    border: solid 1px black;
+    margin: -20px 0 0 -20px;
+  }
 }

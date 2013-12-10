@@ -1,10 +1,30 @@
-//out: redigo.css
-@import "glyph-icons";
-/* -----------/ GLYPH ICONS SUPPORT -------------------*/
-
 /* -----------/ RIGHT TO LEFT ISSUES -------------------*/
 
 @theme-color: #87C9E8;
+
+.ab-block(@aBlock: 20%, @bBlock: 80%) {
+  .ui-block-a {
+    width: @aBlock;
+  }
+
+  .ui-block-b {
+    width: @bBlock;
+  }
+}
+
+.abc-block(@aBlock: 33%, @bBlock: 33%, @cBlock: 33%) {
+  .ab-block(@aBlock, @bBlock);
+
+  .ui-block-c {
+    width: @cBlock;
+  }
+}
+
+.border-radius(@radius) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
 
 .ui-li, .ui-li.ui-field-contain {
   text-align: right;
@@ -41,30 +61,6 @@ a.rg-nav-panel {
   font-size: 1.6em;
 }
 
-.ab-block(@aBlock: 20%, @bBlock: 80%) {
-  .ui-block-a {
-    width: @aBlock;
-  }
-
-  .ui-block-b {
-    width: @bBlock;
-  }
-}
-
-.abc-block(@aBlock: 33%, @bBlock: 33%, @cBlock: 33%) {
-  .ab-block(@aBlock, @bBlock);
-
-  .ui-block-c {
-    width: @cBlock;
-  }
-}
-
-.border-radius(@radius) {
-  -moz-border-radius: @radius;
-  -webkit-border-radius: @radius;
-  border-radius: @radius;
-}
-
 .rg-profile-field {
   font-size: 0.7em;
 }
@@ -78,16 +74,6 @@ a.rg-nav-panel {
   border-radius: 0 5px 0 0;
   padding: 5px 8px;
   text-shadow: none;
-  margin-top: 15px;
-  width: 90%;
-  
-  .rg-profile-avatar {
-    float: left;
-    padding: 4px;
-    background-color: lighten(@theme-color, 10%);
-    border: solid 1px black;
-    margin: -20px 0 0 -20px;
-  }
   
   h2 {
     margin:  0 0 7px;
@@ -191,6 +177,10 @@ a.rg-nav-panel {
   background-color: #fff;
 }
 
+.icon-qrcode{
+	zoom:1;
+}
+
 /* ----------- SWIPEJS STUFF -------------------*/
 .rg-swipe-scroll {
   text-align: center;
@@ -231,4 +221,3 @@ a.rg-nav-panel {
   }
 }
 /* -----------/ SWIPEJS STUFF -------------------*/
-

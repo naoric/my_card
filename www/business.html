@@ -1,106 +1,67 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
 
-	<title>Buisiness</title>
-	<meta charset="UTF-8">
-	<link href="css/rtl.jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css">
-	<link href="css/jquery.mobile.flatui.min.css" rel="stylesheet" type="text/css">
-	<link href="css/jqm-datebox.min.css" rel="stylesheet" type="text/css">
-	<link href="css/redigo.css" rel="stylesheet" type="text/css">
-	<link href="css/business.css" rel="stylesheet" type="text/css">
+    <title>Buisiness</title>
+    <meta charset="UTF-8">
+    <link href="css/rtl.jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.mobile.flatui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jqm-datebox.min.css" rel="stylesheet" type="text/css">
+    <link href="css/redigo.css" rel="stylesheet" type="text/css">
+  </head>
 
-</head>
-
-<body>
-
-	<div data-role="page">
-		<div data-role="panel" id="mypanel" data-position="right" data-display="push">
-			<ul data-role="listview">
-				<li>
-					<a href="#">לך לאינדקס</a>
-				</li>
-				<li>
-					<a href="#">גוגל</a>
-				</li>
-			</ul>
-		</div>
-		<!-- /panel -->
-		<div data-role="header" data-position="fixed">
-			
-			
-			<h1>Page title</h1>
-			<a data-role="none" href="#mypanel" class="rg-nav-panel">&#9776;</a>
-			<a data-role="button" class="rg-nav-panel rg-header-btn-red">	
-				<span class="icon-white icon-qrcode"></span>
-				<span >סרוק</span>
-			</a>
-			
-		</div>
-		<div data-role="content">
-
-			<div class="ui-grid-a rg-profile-top">
-				<div data-role="none"  class="ui-block-a">
-					<h2 id="buistitle">שניצלה</h2>
-					<p>
-						<strong>כתובת:</strong>
-						<span id="rg-field-address" class="rg-profile-field"></span>
-					</p>
-					<p>
-						<strong>טלפון:</strong>
-						<span id="rg-field-phone" class="rg-profile-field"></span>
-					</p>
-
-				</div>
-				<div class="ui-block-b">
-					<img src="http://lorempixel.com/150/150" alt="Business Profile Picture" />
-				</div>
-			</div>
-			<p id="description">
-				<strong>תיאור:</strong>
-				<span id="rg-field-desc" class="rg-profile-field">שניצלה יש את השניצל הכי טעים בארץ מקום ראשון ללא תחרות לשניצלה יש את השניצל הכי טעים בארץ מקום ראשון ללא תחרות</span>
-			</p>
-
-			<!---------------------------------------------------------------------------->
-			<div id='slider' class='swipe'>
-				<div class='swipe-wrap'>
-					<div>
-						Aute do excepteur ubi quid hic aliquip ab labore, sint excepteur possumus an laboris do culpa. Mentitum dolor eu incurreret comprehenderit et a magna exquisitaque in labore transferrem laborum fore admodum est ipsum et possumus. Incurreret a esse. Sunt do iudicem, quem quibusdam praetermissum, ubi nisi ne aute quo do minim tamen amet appellat. Ea officia cohaerescant, vidisse quorum mentitum, quis ingeniis ab domesticarum aut veniam iudicem do incididunt. Summis appellat id efflorescere. Enim id appellat, commodo tamen expetendis.
-					</div>
-					<div>דג זח שט לו בים</div>
-					<div>נאוריציו</div>
-				</div>
-			</div>
+  <body>
+    
+    <div data-role="page" id="business-profile-page">
+      <!-- side menubar -->
+      <div data-role="panel" id="mypanel" data-position="right" data-display="push">
+        <ul data-role="listview">
+          <li>
+            <a href="#">לך לאינדקס</a>
+          </li>
+          <li>
+            <a href="#">גוגל</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /side menubar -->
+      <div data-role="header" data-position="fixed">
+        <h1>Page title</h1>
+        <a data-role="none" href="#mypanel" class="rg-nav-panel">&#9776;</a>
+        <a data-role="button" class="rg-nav-panel rg-header-btn-red">
+          <span class="icon-white icon-qrcode"></span>
+          <span>סרוק</span>
+        </a>
+      </div><!--/header-->
+      <div data-role="content">
+        <img src="http://lorempixel.com/400/120" alt="Business Profile Picture"><div class="rg-business rg-profile-top">
+          <div id="business-details" class="rg-business-details">
+            <h2 id="business-title">שניצלה</h2>
+            <p>
+              <strong>כתובת:</strong>
+              <span id="rg-field-address" class="rg-profile-field"></span>
+            </p>
+            <p>
+              <strong>טלפון:</strong>
+              <span id="rg-field-phone" class="rg-profile-field"></span>
+            </p>
+          </div>
+        </div>
+        <div class="rg-business-content">
+          שניצלה זה ה-מקום לשבת עם חברים לעשות שטויות.
+          יש לנו את השניצלים הכי טעימים בעולם     
+        </div>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h2>Footer Content</h2>
+      </div>
+    </div>
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/rtl.jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+    <script src="js/swipe.min.js"></script>
 
 
-			<h3 style="margin-top:0px;">מבצעים אחרונים</h3>
-			<div class="rg-profile-content">
-				<div data-role="collapsible-set">
-					<div data-role="collapsible">
-						<h3>מבצע 1</h3>
-						<p>קנו פפסי וקבלו שניצל</p>
-					</div>
-					<div data-role="collapsible">
-						<h3>מבצע 2</h3>
-						<p>קנו פפסי וקבלו שניצל</p>
-					</div>
-					<div data-role="collapsible">
-						<h3>מבצע 3</h3>
-						<p>קנו פפסי וקבלו שניצל</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div data-role="footer" data-position="fixed">
-			<h2>Footer Content</h2>
-		</div>
-	</div>
-	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
-	<script src="js/rtl.jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
-	<script src="js/swipe.min.js"></script>
-
-
-</body>
+  </body>
 
 </html>
