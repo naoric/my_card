@@ -1,21 +1,23 @@
 /*jslint browser:true*/
 /*global jQuery:true*/
 /*global console:true*/
-(function ($) {
+(function($) {
   "use strict";
 
   var $doc = $(document);
-  $doc.on('pageinit', '#welcome', function (e) {
+  $doc.on('pageinit', '#welcome', function(e) {
     $.ajax({
       url: 'http://redigo.me/sync',
       method: 'post',
       dataType: 'json'
-    }).done(function (res) {
+    }).done(function(res) {
       var target = (res.status === '1') ? '#profile' : '#login';
-      $.mobile.navigate(target, { transition: 'slideup' });
+      $.mobile.navigate(target, {
+        transition: 'slideup'
+      });
     });
   });
-  $doc.on('pageinit', '#registration', function (e) {
+  $doc.on('pageinit', '#registration', function(e) {
     var validation = {
       rules: {
         password: {
@@ -65,7 +67,7 @@
     };
     $('#signup').ajaxify({
       validation: validation,
-      success: function (res) {
+      success: function(res) {
         var key, $this = $(this);
         if (res.status === "success") {
           $.mobile.route('#login', {
@@ -79,11 +81,12 @@
           $this.errors(res);
         }
       },
-      fail: function (err) { }, // Phonegap notification alert
-      always: function (e) { }
+      fail: function(err) {},
+      // Phonegap notification alert
+      always: function(e) {}
     });
   });
-  $doc.on('pageinit', '#login', function (e) {
+  $doc.on('pageinit', '#login', function(e) {
     var validation = {
       rules: {
         'login-password': {
@@ -109,7 +112,7 @@
 
     $('#login-form').ajaxify({
       validation: validation,
-      success: function (res) {
+      success: function(res) {
         if (res.status === 'success') {
           $.mobile.save({
             email: $('#login-email').val(),
@@ -117,23 +120,40 @@
           });
           $.mobile.navigate('#profile', 'slide');
         } else if (res.status === "failed") {
-          $('#login-notes')
-                        .css('color', 'red')
-                        .html(res.message);
+          $('#login-notes').css('color', 'red').html(res.message);
         }
       },
-      fail: function (err) { } // Phonegap notification alert
+      fail: function(err) {} // Phonegap notification alert
     });
   });
 
-  $doc.on('pageshow', '#profile', function () {
+  $doc.on('pageshow', '#profile', function() {
+    var swipeCount = $('.swipe-wrap:first > div').size(),
+      $pagingList = $('.rg-swipe-scroll:first > ul:first'),
+      $bullets;
+
     window.mySwipe = new Swipe(document.getElementById('slider'), {
       speed: 400,
+      auto: 5000,
       continuous: true,
       disableScroll: false,
       stopPropagation: false,
-      callback: function (index, elem) { },
-      transitionEnd: function (index, elem) { }
+      callback: function(index) {
+        if (!$bullets) {
+          return;
+        }
+        $bullets.removeClass('current');
+        $bullets.get(index % $bullets.size()).className = "current";
+      },
+      transitionEnd: function(index, elem) {}
     });
+
+    // TODO should be implemented after ajax call for all challenges
+    for (var i = 0; i < swipeCount; i++) {
+      $pagingList.append($('<li/>'));
+    }
+
+    $bullets = $pagingList.find('li');
+    $pagingList.find('li:first').addClass('current');
   });
-} (jQuery));
+}(jQuery));
