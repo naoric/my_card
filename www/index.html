@@ -161,12 +161,11 @@
     <script src="js/swipe.min.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
     <script src="cordova.js" type="text/javascript"></script>
-    <script src="cordova_plugins.js" type="text/javascript"></script>
-    <script src="phonegap.js" type="text/javascript"></script>
     <script src="barcodescanner.js" type="text/javascript"></script>
     <script type="text/javascript">
-      $('#scan-it').click(function (e) {
-        cordova.plugin.barcodeScanner.scan(function (result) {
+      $(document).on('click', '#scan-it', function (e) {
+        alert(cordova.plugins);
+        cordova.plugins.barcodeScanner.scan(function (result) {
           alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
@@ -175,6 +174,7 @@
           alert("Scanning failed: " + error);
         });
       });
+      
     </script>
   </body>
 
