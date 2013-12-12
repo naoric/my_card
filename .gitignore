@@ -7,6 +7,8 @@
 
 # Java class files
 *.class
+# platforms files
+platforms/
 
 # generated files
 bin/
