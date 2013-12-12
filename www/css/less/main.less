@@ -1,0 +1,223 @@
+/* -----------/ RIGHT TO LEFT ISSUES -------------------*/
+
+@theme-color: #87C9E8;
+
+.ab-block(@aBlock: 20%, @bBlock: 80%) {
+  .ui-block-a {
+    width: @aBlock;
+  }
+
+  .ui-block-b {
+    width: @bBlock;
+  }
+}
+
+.abc-block(@aBlock: 33%, @bBlock: 33%, @cBlock: 33%) {
+  .ab-block(@aBlock, @bBlock);
+
+  .ui-block-c {
+    width: @cBlock;
+  }
+}
+
+.border-radius(@radius) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.ui-li, .ui-li.ui-field-contain {
+  text-align: right;
+}
+
+.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e {
+  float: right;
+}
+
+.ul-li-aside {
+  float: left
+}
+
+.ui-li-has-arrow .ui-btn-inner a.ui-link-inherit, 
+.ui-li-static.ui-li-has-arrow {
+  padding-left: 40px;
+}
+
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, 
+.ui-li-static.ui-li-has-thumb {
+  padding-right: 100px;
+}
+
+/* -----------/ RIGHT TO LEFT ISSUES -------------------*/
+
+.ui-body-c, .ui-overlay-c {
+  /*background: url('../img/redigo_bg.jpg');*/
+  background: -webkit-radial-gradient(50% 0, circle, #85CAEB 0%, #4F88A6 100%);
+}
+
+a.rg-nav-panel {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6em;
+}
+
+.rg-profile-field {
+  font-size: 0.7em;
+}
+
+.ui-btn-up-a.rg-header-btn-red,  .ui-bar-a .ui-btn-hover-a .rg-header-btn-red{
+  background-color: #d37979;
+}
+
+.rg-profile-top {
+  background-color: lighten(@theme-color, 20%);
+  
+  padding: 5px 8px;
+  text-shadow: none;
+  
+  h2 {
+    margin:  0 0 7px;
+    font-size: 1.3em;
+  }
+  
+  p {
+    font-size: 0.8em;
+    margin: 4px 0;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+}
+
+.rg-separator {
+  display: block;
+  background-color: darken(@theme-color, 45%);
+  color: #fff;
+  text-shadow: none;
+  font-size: 1.1em;
+  padding: 2px 8px;
+  margin-bottom: 0;
+  .border-radius(8px 0 0 0);
+}
+
+.rg-challenge-box {
+  .border-radius(0 0 7px 7px);
+  font-size: small;
+  text-shadow: none;
+  margin: 0;
+  padding: 0;
+  background-color: lighten(spin(@theme-color, 180), 20%);
+  overflow: hidden;
+
+  .ui-grid-b > :nth-child(n) {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  h3 {
+    padding: 7px;
+    margin: 0;
+    float: left;
+    background-color: #476f19;
+    color: white;
+    text-shadow: #476f19 0 1px 0;
+    .border-radius(0 0 7px 0);
+  }
+
+  .ui-grid-b > :nth-child(n) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  h2, h4, h5, h6 {
+    margin: 0 0 15px 0;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .rg-challenge-content {
+    padding: 3px 10px;
+  }
+
+  a.rg-nav-panel {
+    font-size: 1.6em;
+    color: white;
+    text-decoration: none;
+  }
+
+  .abc-block(20%, 60%, 20%);
+}
+
+.rg-business-list {
+  @list-bg-color: #ebebc6;
+  
+  text-shadow: none;
+  margin-top: 0 !important;
+  &.ui-corner-all {
+    .border-radius(0 0 6px 6px);
+  }
+  .ui-btn {
+    background-color: @list-bg-color;
+    border: 1px solid darken(@list-bg-color, 20%);
+  }
+  
+  img {
+    margin-right: 0;
+  }
+}
+
+.ui-input-search, div.ui-input-text {
+  background-color: #fff;
+}
+
+.icon-qrcode{
+	zoom:1;
+}
+
+/* ----------- SWIPEJS STUFF -------------------*/
+.rg-swipe-scroll {
+  text-align: center;
+  ul {
+    display: inline-block;
+    font-size: 1.2em;
+    padding-left: 0;
+    margin: 0 auto;
+    list-style-type: circle;
+    list-style-position: inside;
+    color: #cfdec1;
+    & >li {
+      float: left;
+      margin: 0 3px;
+    }
+    
+    & >li.current {
+      list-style-type: disc;
+    }
+  }
+}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  direction: ltr;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+
+  & > div {
+    float: left;
+    width: 90%;
+    position: relative;
+  }
+}
+/* -----------/ SWIPEJS STUFF -------------------*/

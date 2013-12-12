@@ -5,23 +5,13 @@ Cross-platform BarcodeScanner for Cordova / PhoneGap.
 
 Follows the [Cordova Plugin spec](https://github.com/apache/cordova-plugman/blob/master/plugin_spec.md), so that it works with [Plugman](https://github.com/apache/cordova-plugman).
 
-This plugin leverages Cordova/PhoneGap's [require/define functionality used for plugins](http://simonmacdonald.blogspot.ca/2012/08/so-you-wanna-write-phonegap-200-android.html). 
-
 Note: the Android source for this project includes an Android Library Project.
-_plugman_ currently doesn't support Library Project refs, so its been
+plugman currently doesn't support Library Project refs, so its been
 prebuilt as a jar library. Any updates to the Library Project should be
 committed with an updated jar.
 
-Note: the iOS source for this project includes a XCode Universal Static Library Project.
-_plugman_ currently doesn't support Library Project refs, so its been
-prebuilt as a fat library. Any updates to the Static Library Project should be
-committed with an updated library file (.a).
-
-Note: the WP8 source does not include the ZXing.Net library, so it has to
-be included during installation.
-
 ## Using the plugin ##
-The plugin creates the object `plugins.barcodeScanner` with the method `scan(success, fail)`. 
+The plugin creates the object `cordova/plugin/BarcodeScanner` with the method `scan(success, fail)`. 
 
 The following barcode types are currently supported:
 ### Android
@@ -43,26 +33,6 @@ The following barcode types are currently supported:
 
 ### iOS
 
-* AZTEC
-* CODABAR
-* CODE_39
-* CODE_93
-* CODE_128
-* DATA_MATRIX
-* EAN_8
-* EAN_13
-* ITF
-* MAXICODE
-* PDF_417
-* QR_CODE
-* RSS_14
-* RSS_EXPANDED
-* UPC_A
-* UPC_E
-* UPC_EAN_EXTENSION
-
-### WP8
-
 * QR_CODE
 * DATA_MATRIX
 * UPC_E
@@ -71,36 +41,13 @@ The following barcode types are currently supported:
 * EAN_13
 * CODE_128
 * CODE_39
-* CODE_93
-* CODABAR
 * ITF
-* RSS14
-* PDF417
-* MSI
-
-## Installing the plugin ##
-
-1. Download the repo using GIT or just a ZIP from Github.
-2. Add the plugin to your project (from the root of your project):
-
-```
-   cordova plugin add <path_download_plugin>
-```
-
-Windows Phone 8 needs some more steps:
-
-1. Open your project on Visual Studio 2012.
-2. Right click on `References`, select `Magange NuGet Packages`.
-3. Search online for `ZXing.Net` (created by Michael Jahn at http://zxingnet.codeplex.com).
-4. Install it.
 
 `success` and `fail` are callback functions. Success is passed an object with data, type and cancelled properties. Data is the text representation of the barcode data, type is the type of barcode detected and cancelled is whether or not the user cancelled the scan.
 
 A full example could be:
 ```
-   var scanner = cordova.require("com.phonegap.plugins.barcodescanner.barcodescanner");
-
-   scanner.scan(
+   cordova.plugins.barcodeScanner.scan(
       function (result) {
           alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
@@ -125,9 +72,7 @@ Supported encoding types:
 ```
 A full example could be:
 
-   var scanner = cordova.require("com.phonegap.plugins.barcodescanner.barcodescanner");
-
-   scanner.encode(BarcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com", function(success) {
+   cordova.plugins.barcodeScanner.encode(BarcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com", function(success) {
   	        alert("encode success: " + success);
   	      }, function(fail) {
   	        alert("encoding failed: " + fail);
