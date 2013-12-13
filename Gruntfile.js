@@ -51,6 +51,13 @@ module.exports = function (grunt) {
         }]
       }
     },
+    handlebars: {
+      node: {
+         options : {
+           
+         }
+      }
+    },
     watch: {
       files: "www/css/less/*.less",
       tasks: ["less:dev"]
@@ -60,6 +67,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-install-dependencies');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
