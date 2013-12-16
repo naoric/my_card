@@ -61,23 +61,27 @@
       <div data-role="header" data-position="fixed">
         <h1>פרופיל משתמש</h1>
       </div>
+      
       <div data-role="content">
-        <div class="rg-user rg-profile-top">
+        <div id="rg-user-profile" class="rg-user rg-profile-top">
+           <script id="profile-template" type="text/x-handlebars-template"><!--handlebars profile-->
           <p class="rg-profile-avatar">
-            <img src="http://lorempixel.com/60/60" alt="Profile Picture" />
+            <img src="" alt="Profile Picture" />
           </p> 
-          <h2>יובל צלקה</h2>
+          <h2>{{full_name}}</h2>
           <p>
-            <strong>דוא&quot;ל</strong>: yuvalzalka@gmail.com
+            <strong>דוא&quot;ל</strong>{{email}}
           </p>
           <p>
-            <strong>הצטרף ב</strong>: 14.03.2014
+            <strong>הצטרף ב</strong>{{created_at}}
           </p>
+      	</script><!--end handlebars profile-->
         </div>
         <h3 class="rg-separator">הזדמנויות</h3>
         <div class="rg-profile-content">
           <div id="slider" class="swipe">
             <div class="swipe-wrap">
+              <script id="challenge-template" type="text/x-handlebars-template">
               <div class="rg-challenge-wrapper">
                 <div class="rg-challenge-box">
                   <div class="ui-grid-b rg-challeng-head">
@@ -117,6 +121,7 @@
                 </div>
                 <!-- /rg-challenge-box -->
               </div>
+              </script>
             </div>
             <!-- / .swip-wrap -->
             <div class="rg-swipe-scroll">
@@ -126,19 +131,19 @@
           </div><!-- / .swipe -->
           <h3 class="rg-separator">עסקים רשומים</h3>
           <ul data-role="listview" data-inset="true" class="rg-business-list">
-            <li><a href="business.html" data-transition="slide" data-direction="reverse">
+            <li><a data-id="1" data-transition="slide" data-direction="reverse">
                 <p class="ul-li-aside ui-li-desc"><strong>200 מ'</strong></p>
                 <img src="http://lorempixel.com/80/80" alt="Business Image">
                 <h2>שניצלה</h2>
                 <p>פרטים על העסק, אולי מרחק</p>
               </a></li>
-            <li><a href="business.html" data-transition="slide" data-direction="reverse">
+            <li><a data-id="2" data-transition="slide" data-direction="reverse">
                 <p class="ul-li-aside ui-li-desc"><strong>200 מ'</strong></p>
                 <img src="http://lorempixel.com/80/80" alt="Business Image">
                 <h2>רוזה</h2>
                 <p>פרטים על העסק, אולי מרחק</p>
               </a></li>
-            <li><a href="business.html" data-transition="slide" data-direction="reverse">
+            <li><a data-id="3" data-transition="slide" data-direction="reverse">
                 <p class="ul-li-aside ui-li-desc"><strong>200 מ'</strong></p>
                 <img src="http://lorempixel.com/80/80" alt="Business Image">
                 <h2>אירית</h2>
@@ -146,7 +151,7 @@
               </a></li>
           </ul><!-- / .rg-business-list -->
         </div><!-- / .rg-profile-content -->
-      </div><!-- / page-content -->
+       </div><!-- / page-content -->
       <div data-role="footer" data-position="fixed">
         <h2>קישורים לדפים חשובים: משתמש</h2>
       </div>
@@ -160,8 +165,11 @@
     <script src="js/essentials.js" type="text/javascript"></script>
     <script src="js/swipe.min.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
-    <script src="cordova.js" type="text/javascript"></script>
-    <script src="barcodescanner.js" type="text/javascript"></script>
+    <script src="js/handlebars.min.js" type="text/javascript"></script>
+	<script src="js/business.js" type="text/javascript"></script>
+  <!--  <script src="cordova.js" type="text/javascript"></script>
+    <script src="barcodescanner.js" type="text/javascript"></script>-->
+    
     <script type="text/javascript">
       $(document).on('click', '#scan-it', function (e) {
         alert(cordova.plugins);

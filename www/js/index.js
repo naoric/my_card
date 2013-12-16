@@ -116,8 +116,11 @@
         if (res.status === 'success') {
           $.mobile.save({
             email: $('#login-email').val(),
-            password: $('#login-password').val()
+            password: $('#login-password').val(),
+			user:res.user,
+			id:res.user.id
           });
+			console.log($.mobile.load('user'));
           $.mobile.navigate('#profile', 'slide');
         } else if (res.status === "failed") {
           $('#login-notes').css('color', 'red').html(res.message);
@@ -128,10 +131,21 @@
   });
 
   $doc.on('pageshow', '#profile', function() {
+	  
     var swipeCount = $('.swipe-wrap:first > div').size(),
       $pagingList = $('.rg-swipe-scroll:first > ul:first'),
       $bullets;
-
+	  $.get('http://redigo.me/cards/user/',function(){
+	  }).done(function(result){
+		  	var info=JSON.parse($.mobile.load('user'));
+	  		var source=$("#profile-template").html();
+		  	var template=Handlebars.compile(source);
+		  	$('#rg-user-profile').append(template(info));
+	  });
+	  $(".rg-business-list").on('click','a',function(e) {
+		  $.mobile.route("business.html",{external:true,flash:$(this).data('id')});
+	  });
+	  
     window.mySwipe = new Swipe(document.getElementById('slider'), {
       speed: 400,
       auto: 5000,
@@ -156,4 +170,6 @@
     $bullets = $pagingList.find('li');
     $pagingList.find('li:first').addClass('current');
   });
+	
+	
 }(jQuery));
