@@ -604,6 +604,10 @@ div.ui-input-text {
 .icon-qrcode {
   zoom: 1;
 }
+.icon-arrow-left{
+zoom: 1.5;
+margin-top:2px;
+}
 /* ----------- SWIPEJS STUFF -------------------*/
 .rg-swipe-scroll {
   text-align: center;

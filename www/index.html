@@ -82,6 +82,7 @@
           <div id="slider" class="swipe">
             <div class="swipe-wrap">
               <script id="challenge-template" type="text/x-handlebars-template">
+				  {{#each this}}
               <div class="rg-challenge-wrapper">
                 <div class="rg-challenge-box">
                   <div class="ui-grid-b rg-challeng-head">
@@ -101,27 +102,9 @@
                 </div>
                 <!-- /rg-challenge-box -->
               </div>
-              <!-- /rg-challenge-box -->
-              <div class="rg-challenge-wrapper">
-                <div class="rg-challenge-box">
-                  <div class="ui-grid-b rg-challeng-head">
-                    <div class="ui-block-a">
-                      <img src="http://placehold.it/40x40" alt="business-logo">
-                    </div>
-                    <div class="ui-block-b">
-                      <h4>הודעה שנייה</h4>
-                    </div>
-                    <div class="ui-block-c">
-                      <h3>378</h3>
-                    </div>
-                  </div>
-                  <div class="rg-challenge-content">
-										קנו אצלנו בלה בלה בלה בלה וקבלו ככה וככה. ויובל זלקששקש
-                  </div>
-                </div>
-                <!-- /rg-challenge-box -->
-              </div>
+				  {{/each}}
               </script>
+              <!-- /rg-challenge-box -->  
             </div>
             <!-- / .swip-wrap -->
             <div class="rg-swipe-scroll">
@@ -131,13 +114,17 @@
           </div><!-- / .swipe -->
           <h3 class="rg-separator">עסקים רשומים</h3>
           <ul data-role="listview" data-inset="true" class="rg-business-list">
-            <li><a data-id="1" data-transition="slide" data-direction="reverse">
+            <script id="reg-business-template" type="text/x-handlebars-template">
+				{{#each .}}
+            <li><a data-id="{{id}}" data-transition="slide" data-direction="reverse">
                 <p class="ul-li-aside ui-li-desc"><strong>200 מ'</strong></p>
                 <img src="http://lorempixel.com/80/80" alt="Business Image">
-                <h2>שניצלה</h2>
-                <p>פרטים על העסק, אולי מרחק</p>
+                <h2>{{cname}}</h2>
+                <p>{{description}}</p>
               </a></li>
-            <li><a data-id="2" data-transition="slide" data-direction="reverse">
+				{{/each}}
+               </script>
+          <!--  <li><a data-id="2" data-transition="slide" data-direction="reverse">
                 <p class="ul-li-aside ui-li-desc"><strong>200 מ'</strong></p>
                 <img src="http://lorempixel.com/80/80" alt="Business Image">
                 <h2>רוזה</h2>
@@ -148,7 +135,7 @@
                 <img src="http://lorempixel.com/80/80" alt="Business Image">
                 <h2>אירית</h2>
                 <p>פרטים על העסק, אולי מרחק</p>
-              </a></li>
+              </a></li>-->
           </ul><!-- / .rg-business-list -->
         </div><!-- / .rg-profile-content -->
        </div><!-- / page-content -->
