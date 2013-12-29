@@ -706,3 +706,7 @@ margin-top:2px;
 .rg-business-profile img {
   display: block;
 }
+/*-------------AJAX STUFF---------------*/
+.ui-loader-verbose h1{
+	color:white;
+}

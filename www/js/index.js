@@ -1,6 +1,9 @@
 /*jslint browser:true*/
 /*global jQuery:true*/
 /*global console:true*/
+/*global handler:true*/
+/*global Swipe:true*/
+
 (function ($) {
 	"use strict";
 
@@ -142,21 +145,21 @@
 				template: '#reg-business-template'
 			},
 			{
-				storage:'user',
+				storage: 'user',
 				parent: '#rg-user-profile',
 				template: "#profile-template"
-			}]);
-//		$.get('http://redigo.me/cards/user/', function () {}).done(function (result) {
-//			var infoUser = JSON.parse($.mobile.load('user')),
-//				sourceBuisness = $('#reg-business-template').html(),
-//				source = $("#profile-template").html(),
-//				template = Handlebars.compile(source),
-//				businesstemplate = Handlebars.compile(sourceBuisness);
-//			$('#rg-user-profile').html(template(infoUser));
-//			$('ul.rg-business-list').html(businesstemplate(result['result']));
-//			$('ul.rg-business-list').listview().listview('refresh');
-//
-//		});
+			}], {
+			before: function () {
+				$.mobile.loading('show', {
+					text: 'טוען...',
+					textVisible: true,
+					theme:"a"
+				});
+			},
+			after: function () {
+				$.mobile.loading('hide');
+			}
+		});
 		$(".rg-business-list").on('click', 'a', function (e) {
 			$.mobile.route("business.html", {
 				external: true,
