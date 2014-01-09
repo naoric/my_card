@@ -710,3 +710,6 @@ margin-top:2px;
 .ui-loader-verbose h1{
 	color:white;
 }
+.scan-it{
+	display:block !important;
+}

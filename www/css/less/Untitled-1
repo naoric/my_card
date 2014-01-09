@@ -1,0 +1,34 @@
+handler.compile([
+	{url: "cards/all-cards", template: "cards", parent: "#container" },
+	{ storage: "name", template: "profile", callback: function(count) {} }
+]);
+
+handler.addEventListener("doneLoadingTemplates", function() {
+	
+});
+	
+	
+
+
+var handler = {
+	compile: function(arrSources, opts) {
+		var len = arrSources.length,
+		opts = $.extend({
+			method: "get"
+		}, opts);
+		
+		$.each(arrSources, function(item) {
+			if (item.url) {
+				$.ajax ({
+					method: opts.method	
+				}).done() {
+					// load template
+					callback(count);
+				}
+			}
+		})
+		
+	}
+	
+		
+}

@@ -3,6 +3,7 @@
 /*global console:true*/
 /*global Handlebars:true*/
 /*global alert:true*/
+/*global cordova:true*/
 (function ($) {
 	"use strict";
 	$.mobile.flash = function (data) {
@@ -55,19 +56,10 @@
 	$.mobile.route = function (path, opts) {
 		opts = opts || {};
 		opts = $.extend({
-			flash: {},
-			external: false
+			flash: {}
 		}, opts);
 		$.mobile.flash(opts.flash);
-		if (opts.external) {
-			$.mobile.changePage(path, {
-				transition: "slideup",
-				changeHash: false
-			});
-		} else {
-			$.mobile.navigate(path, opts);
-		}
-
+		$.mobile.navigate(path);
 	};
 
 	//    $.fn.ajaxify = function (success, fail, always, validation) {
@@ -183,8 +175,28 @@
 					if (value.refresh) {
 						$(value.parent).listview("refresh");
 					}
+					count++;
 				}
 			});
 		}
 	};
+	$.mobile.scan = function () {
+		cordova.plugins.barcodeScanner.scan(function (result) {
+			$.post("http://redigo.me/cards/scanner", {
+				id: result.text
+			}).done(function (data) {
+				if (data.status === "failed")
+					alert("already scanned");
+				else {
+					alert("you got " + data.result.current_points + " points");
+				}
+			});
+		}, function (error) {
+			alert(error);
+		});
+	};
+	$(document).on('click', '.scan-it', function (e) {
+		$.mobile.scan();
+	});
+
 }(jQuery));

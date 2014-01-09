@@ -133,11 +133,9 @@
 		});
 	});
 
+	
 	$doc.on('pageshow', '#profile', function () {
-
-		var swipeCount = $('.swipe-wrap:first > div').size(),
-			$pagingList = $('.rg-swipe-scroll:first > ul:first'),
-			$bullets;
+		
 		handler.compile([{
 				url: 'http://redigo.me/cards/user/',
 				parent: 'ul.rg-business-list',
@@ -148,48 +146,53 @@
 				storage: 'user',
 				parent: '#rg-user-profile',
 				template: "#profile-template"
+			}, {
+				url: 'http://redigo.me/user-challenges/',
+				template: "#challenge-template",
+				parent: ".swipe-wrap"
 			}], {
 			before: function () {
 				$.mobile.loading('show', {
 					text: 'טוען...',
 					textVisible: true,
-					theme:"a"
 				});
 			},
 			after: function () {
+			var swipeCount = $('.swipe-wrap:first > div').size(),
+				$pagingList = $('.rg-swipe-scroll:first > ul:first'),
+				$bullets;
+				window.mySwipe = new Swipe(document.getElementById('slider'), {
+					speed: 400,
+					auto: 5000,
+					continuous: true,
+					disableScroll: false,
+					stopPropagation: false,
+					callback: function (index) {
+						if (!$bullets) {
+							return;
+						}
+						$bullets.removeClass('current');
+						$bullets.get(index % $bullets.size()).className = "current";
+					},
+					transitionEnd: function (index, elem) {}
+				});
+
+				for (var i = 0; i < swipeCount; i++) {
+					$pagingList.append($('<li/>'));
+				}
+
+				$bullets = $pagingList.find('li');
+				$pagingList.find('li:first').addClass('current');
 				$.mobile.loading('hide');
+				
 			}
 		});
+		
+		
 		$(".rg-business-list").on('click', 'a', function (e) {
-			$.mobile.route("business.html", {
-				external: true,
+			$.mobile.route("#business-profile-page", {
 				flash: $(this).data('id')
 			});
 		});
-
-		window.mySwipe = new Swipe(document.getElementById('slider'), {
-			speed: 400,
-			auto: 5000,
-			continuous: true,
-			disableScroll: false,
-			stopPropagation: false,
-			callback: function (index) {
-				if (!$bullets) {
-					return;
-				}
-				$bullets.removeClass('current');
-				$bullets.get(index % $bullets.size()).className = "current";
-			},
-			transitionEnd: function (index, elem) {}
-		});
-
-		// TODO should be implemented after ajax call for all challenges
-		for (var i = 0; i < swipeCount; i++) {
-			$pagingList.append($('<li/>'));
-		}
-
-		$bullets = $pagingList.find('li');
-		$pagingList.find('li:first').addClass('current');
 	});
-
-}(jQuery));
+})(jQuery);
